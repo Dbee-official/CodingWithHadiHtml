@@ -1,0 +1,84 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section discover.
+// -----------------------------------------------------------------------------
+
+.section-discover {
+  margin-bottom: 66px;
+
+  .discover-heading-icon {
+    margin-bottom: 11px;
+  }
+
+  .h3 {
+    margin-bottom: 45px;
+  }
+
+  .custom-col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .custom-col {
+    img {
+      width: 100%;
+    }
+  }
+
+  .discover-gallery-wrapper {
+    position: relative;
+
+    &:hover {
+      .btn-wrapper {
+        opacity: 1;
+      }
+    }
+
+    .btn-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      margin-left: -15px;
+      margin-right: -15px;
+
+      @include flexbox()
+      @include align-items(center)
+      @include justify-content(center)
+
+      background-color: rgba(0, 0, 0, .7);
+
+      opacity: 0;
+      @include transition(all .3s linear);
+    }
+  }
+
+  @include respond-to(md) {
+    margin-bottom: 30px;
+
+    .h3 {
+      margin-bottom: 27px;
+
+      font-size: 25px;
+    }
+
+    .discover-gallery-wrapper {
+      margin-left: -15px;
+      margin-right: -15px;
+
+      overflow: scroll;
+
+      .row,
+      .btn-wrapper {
+        width: 939px;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    display: none;
+  }
+}

@@ -1,0 +1,163 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section information.
+// -----------------------------------------------------------------------------
+
+.section-information {
+  padding: 55px 0;
+
+  .information-wrapper {
+    @include flexbox()
+
+    .custom-col {
+      @include flexbox()
+      @include justify-content(center)
+      @include align-items(center)
+      flex: 1 0 50%;
+
+      padding: 116px 0;
+    }
+
+    .content-wrapper {
+      display: inline-block;
+      text-align: center;
+    }
+
+    .left {
+      background-image: url('../assets/images/bg-information-1.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 24px;
+    }
+
+    .right {
+      background-image: url('../assets/images/bg-information-2.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 24px;
+    }
+
+    .category-text {
+      position: relative;
+
+      display: inline-block;
+
+      margin-bottom: 0;
+
+      font-family: $font-avenir-medium;
+      font-size: 20px;
+      color: white;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: -96px;
+
+        width: 83px;
+
+        border: 1px solid white;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 9px;
+        right: -96px;
+
+        width: 83px;
+
+        border: 1px solid white;
+      }
+    }
+
+    .h4 {
+      width: auto;
+      padding-bottom: 10px;
+
+      border-bottom: 1px solid white;
+    }
+  }
+
+  @include respond-to(lg) {
+    .information-wrapper {
+      .left {
+        background-position: 80%;
+      }
+
+      .right {
+        background-position: 80%;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    padding: 30px 0;
+
+    .information-wrapper {
+      .custom-col {
+        padding: 52px 0;
+      }
+
+      .content-wrapper {
+        width: 80%;
+      }
+
+      .category-text {
+        font-size: 14px;
+
+        &::before {
+          left: -113px;
+        }
+
+        &::after {
+          right: -113px;
+        }
+      }
+
+      .h4 {
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    padding: 25px 0;
+
+    .information-wrapper{
+      display: block;
+    }
+  }
+
+  @include respond-to(xs) {
+    padding-top: 0;
+
+    background-color: #e7e7e7;
+
+    .information-wrapper {
+      .content-wrapper {
+        width: 90%;
+      }
+
+      .category-text {
+        font-size: 15px;
+
+        &::before,
+        &::after {
+          width: 75px;
+          border: .5px solid white;
+        }
+      }
+
+      .custom-col {
+        padding: 29px 0;
+      }
+
+      .left,
+      .right {
+        border-radius: 5px;
+      }
+    }
+  }
+}

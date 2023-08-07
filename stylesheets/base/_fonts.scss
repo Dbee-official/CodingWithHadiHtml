@@ -1,0 +1,13 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+@include font-face($font-opensans, $base-url + 'fonts/', 'opensans-regular', 'opensans-regular');
+
+@include font-face($font-avenir-heavy, $base-url + 'fonts/', 'avenir-heavy', 'avenir-heavy');
+@include font-face($font-avenir-black, $base-url + 'fonts/', 'avenir-black', 'avenir-black');
+@include font-face($font-avenir-medium, $base-url + 'fonts/', 'avenir-medium', 'avenir-medium');
+@include font-face($font-avenir-roman, $base-url + 'fonts/', 'avenir-roman', 'avenir-roman');
+@include font-face($font-avenir-demi, $base-url + 'fonts/', 'opensans-regular', 'opensans-regular');

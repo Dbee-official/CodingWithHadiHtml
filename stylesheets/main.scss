@@ -1,0 +1,80 @@
+﻿@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+  'utils/variables',
+  'utils/functions',
+  'utils/mixins';
+
+// 2. Vendors
+@import
+  'vendors/bootstrap',
+  'vendors/font-awesome';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/footer',
+  'layout/section-banner',
+  'layout/section-features',
+  'layout/section-featured-products',
+  'layout/section-information',
+  'layout/section-newsletter',
+  'layout/section-discover',
+  'layout/section-socials',
+  'layout/section-banner-product',
+  'layout/section-product-details',
+  'layout/section-reviews',
+  'layout/section-carousel-products',
+  'layout/section-combos-details',
+  'layout/section-learning-details';
+
+// 5. Components
+@import
+  'components/buttons',
+  'components/modals',
+  'components/sidebar',
+  'components/dropdowns',
+  'components/breadcrumb-product-details',
+  'components/breadcrumbs-product-listing',
+  'components/checkbox-product-listing',
+  'components/custom-tabs',
+  'components/more-products',
+  'components/tabs-banner',
+  'components/media-tabs',
+  'components/order-confirmation',
+  'components/order-summary',
+  'components/shipping-payment',
+  'components/article',
+  'components/breadcrumb-learning-details',
+  'components/bag-review';
+
+// 6. Page-specific styles
+@import
+  'pages/home',
+  'pages/product-listing',
+  'pages/product-details',
+  'pages/return-&-exchange',
+  'pages/contact-us',
+  'pages/combos-details',
+  'pages/about-us',
+  'pages/page404',
+  'pages/media',
+  'pages/my-account',
+  'pages/receipt',
+  'pages/learning-library';
+
+// 7. Themes
+@import
+  'themes/default';
+
+// Hamburgers
+// @import
+//   '../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';

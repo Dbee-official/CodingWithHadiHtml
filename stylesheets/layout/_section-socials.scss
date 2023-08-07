@@ -1,0 +1,308 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section socials.
+// -----------------------------------------------------------------------------
+
+.section-socials {
+  padding-bottom: 66px;
+
+  .custom-container {
+    @include flexbox()
+    @include justify-content(center)
+  }
+
+  .socials-wrapper {
+    @include flexbox()
+    @include justify-content(space-between)
+
+    width: 444px;
+
+    .socials-icon-wrapper {
+      position: relative;
+
+      @include flexbox()
+      @include justify-content(center)
+
+      width: 30px;
+
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 31.5px);
+
+        width: 63px;
+        height: 31px;
+
+        @include transition(all .3s linear)
+      }
+
+      &::before {
+        top: -16px;
+
+        border: 2px solid $tarawera-grey;
+        border-bottom: 0;
+        border-top-left-radius: 90px;
+        border-top-right-radius: 90px;
+      }
+
+      &::after {
+        bottom: -16px;
+
+        border: 2px solid $french-pass-blue;
+        border-top: 0;
+        border-bottom-left-radius: 90px;
+        border-bottom-right-radius: 90px;
+      }
+
+      @include on-event() {
+        &::before {
+          border: 2px solid $french-pass-blue;
+          border-bottom: 0;
+        }
+
+        &::after {
+          border: 2px solid $tarawera-grey;
+          border-top: 0;
+        }
+      }
+    }
+
+    .socials-icon {
+      font-size: 32px;
+      color: $french-pass-blue;
+    }
+  }
+
+  .whatsapp-wrapper {
+    @include on-event() {
+      .whatsapp-number-wrapper {
+        visibility: visible;
+      }
+    }
+  }
+
+  .whatsapp-number-wrapper {
+    position: absolute;
+    top: calc(50% - 25.5px);
+
+    visibility: hidden;
+
+    @include transition(all .3s linear)
+
+    .whatsapp-number {
+      position: relative;
+
+      margin-bottom: 0;
+      padding: 16px;
+
+      font-family: $font-avenir-medium;
+      font-size: 13px;
+      letter-spacing: .6px;
+      white-space: nowrap;
+
+      background-color: white;
+      border: 1px solid $ghost-grey;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+
+        height: 0;
+        width: 0;
+
+        border: solid transparent;
+
+        pointer-events: none;
+      }
+
+      &::before {
+        margin-top: -11px;
+
+        border-color: rgba(190, 190, 191, 0);
+        border-width: 11px;
+      }
+
+      &::after {
+        margin-top: -10px;
+
+        border-color: rgba(255, 255, 255, 0);
+        border-width: 10px;
+      }
+    }
+  }
+
+  @include respond-to(lg) {
+    .socials-wrapper {
+
+    }
+    .whatsapp-number-wrapper {
+      top: calc(50% - 20px);
+
+      .whatsapp-number {
+        padding: 11px;
+
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    .socials-wrapper {
+      width: 350px;
+
+      .socials-icon-wrapper {
+        &::before,
+        &::after {
+          left: calc(50% - 25px);
+
+          width: 50px;
+          height: 25px;
+        }
+
+        &::before {
+          top: -15px;
+        }
+
+        &::after {
+          bottom: -15px;
+        }
+      }
+
+      .socials-icon {
+        font-size: 22px;
+      }
+    }
+
+    .whatsapp-number-wrapper {
+      top: calc(50% - 14px);
+
+      .whatsapp-number {
+        padding: 6px 1px;
+
+        font-size: 10px;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    padding-bottom: 25px;
+    padding-top: 30px;
+
+    background-image: url('../assets/images/bg-footer-1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .socials-wrapper {
+      .socials-icon-wrapper {
+        &::after,
+        &::before {
+          left: calc(50% - 18.5px);
+
+          width: 37px;
+          height: 18px;
+        }
+
+        &::before {
+          top: -8px;
+        }
+
+        &::after {
+          bottom: -8px;
+        }
+      }
+
+      .socials-icon {
+        font-size: 22px;
+      }
+    }
+
+    .whatsapp-number-wrapper {
+      display: none;
+    }
+  }
+
+  @include respond-to(xs) {
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    .socials-wrapper {
+      width: 90%;
+    }
+  }
+}
+
+.direction-ltr {
+  .section-socials {
+    .whatsapp-number-wrapper {
+      left: 72px;
+
+      .whatsapp-number {
+        &::before,
+        &::after {
+          right: 100%;
+        }
+
+        &::before {
+          border-right-color: $ghost-grey;
+        }
+
+        &::after {
+          border-right-color: white;
+        }
+      }
+    }
+
+    @include respond-to(md) {
+      .whatsapp-number-wrapper {
+        left: 57px;
+      }
+    }
+  }
+}
+
+.direction-rtl {
+  .section-socials {
+    .socials-wrapper {
+
+    }
+
+    .whatsapp-number-wrapper {
+      right: 72px;
+
+      .whatsapp-number {
+        &::before,
+        &::after {
+          left: 100%;
+        }
+
+        &::before {
+          border-left-color: $ghost-grey;
+        }
+
+        &::after {
+          border-left-color: white;
+        }
+      }
+    }
+
+    @include respond-to(md) {
+      .socials-wrapper {
+
+      }
+
+      .whatsapp-number-wrapper {
+        right: 57px;
+      }
+    }
+  }
+}

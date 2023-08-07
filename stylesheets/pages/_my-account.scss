@@ -1,0 +1,911 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the my account page.
+// -----------------------------------------------------------------------------
+
+.my-account {
+  .section-tabs-banner {
+    .custom-tabs{
+      &.large {
+        .tabs-bordered {
+          .tabs-bordered-link {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .section-main-content {
+    padding: 65px 0;
+  }
+
+  .edit-account-tab {
+    .h6 {
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+
+      border-bottom: 1px solid $gainsboro-grey;
+    }
+
+    .input-group {
+      @include justify-content(space-between)
+    }
+
+    .custom-input {
+      width: 48.5%;
+
+      border: 1px solid $gainsboro-grey;
+    }
+
+    .select-input {
+      color: $matterhorn-grey;
+    }
+
+    .date-input {
+      width: 48.5%;
+      margin-bottom: 36px;
+
+      border: 1px solid $gainsboro-grey;
+
+      .date-label {
+        width: 32%;
+        margin-bottom: 0;
+      }
+
+      .select-wrapper {
+        width: 22.6666%;
+
+        &::before {
+          top: 10px;
+        }
+
+        select.custom-input {
+          width: 100%;
+          margin-bottom: 0;
+          padding: 15px 10px;
+        }
+      }
+
+      .custom-input {
+        border: 0;
+      }
+    }
+
+    .country-of-residence {
+      width: 48.5%;
+
+      .select-input {
+        width: 100%;
+      }
+    }
+
+    .edit-account-row {
+      @include flexbox()
+      @include justify-content(space-between)
+
+      .edit-account-col {
+        width: 46.5%;
+      }
+    }
+
+    .thank-you-text {
+      margin-bottom: 4px;
+
+      font-family: $font-avenir-black;
+      font-size: 13px;
+      color: $regent-st-blue;
+      letter-spacing: .5px;
+    }
+
+    .thank-you-subtext {
+      font-family: $font-avenir-roman;
+      font-size: 14px;
+      color: $dim-grey;
+    }
+  }
+
+  .orders-tab {
+    .pending {
+      color: $carrot-orange;
+    }
+
+    .processing {
+      color: $french-pass-blue;
+    }
+
+    .table-orders {
+      width: 100%;
+
+      th,
+      td {
+        font-family: $font-avenir-roman;
+        font-size: 14px;
+        font-weight: 100;
+      }
+
+      th {
+        padding: 0 19px;
+
+        color: $light-gray;
+      }
+
+      td {
+        padding: 22px 19px;
+
+        &[data-label="Track order"],
+        &[data-label="Receipt"] {
+          img {
+            cursor: pointer;
+          }
+        }
+      }
+
+      thead {
+        border-bottom: 4px solid;
+
+        th {
+          padding-bottom: 14px;
+        }
+      }
+
+      tbody {
+        tr {
+          border: 1px solid $whisper-white;
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  .address-book-tab {
+    .heading-holder {
+      @include flexbox()
+      @include justify-content(space-between)
+
+      margin-bottom: 41px;
+      padding-bottom: 4px;
+
+      border-bottom: 4px solid;
+    }
+
+    .add-new-address {
+      font-family: $font-avenir-heavy;
+      font-size: 13px;
+      color: $french-pass-blue;
+
+      @include transition(all .3s linear)
+
+      @include on-event() {
+        color: $tarawera-grey;
+        text-decoration: none;
+      }
+    }
+
+    .address-list-wrapper {
+      @include flexbox()
+      @include justify-content(space-between)
+      @include flex-wrap(wrap)
+
+      &:nth-child(2) {
+        margin-bottom: 112px;
+      }
+    }
+
+    .address-item {
+      .address-box {
+        width: 380px;
+        padding: 27px 30px 12px;
+
+        border: 1px solid $gainsboro-grey;
+      }
+
+      .address-title {
+        @include flexbox()
+        @include justify-content(space-between)
+        @include align-items(center)
+
+        position: relative;
+
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+
+        border-bottom: 1px solid $gainsboro-grey;
+      }
+
+      .h6 {
+        margin-bottom: 0;
+
+        font-family: $font-avenir-black;
+        color: $regent-st-blue;
+        letter-spacing: 1.5px;
+      }
+
+      .address-details-wrapper {
+        width: 208px;
+      }
+
+      p {
+        margin-bottom: 8px;
+
+        font-family: $font-avenir-medium;
+        font-size: 13px;
+        line-height: 16px;
+      }
+
+      .edit-link {
+        position: absolute;
+        top: -13px;
+
+        color: $french-pass-blue;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          width: 100%;
+
+          border-bottom: 2px solid $french-pass-blue;
+        }
+
+        .fa {
+          font-size: 17px;
+        }
+      }
+
+      .make-as-default {
+        margin-top: 15px;
+
+        font-family: $font-avenir-heavy;
+        font-size: 13px;
+        color: black;
+
+        @include transition(all .3s linear)
+
+        @include on-event() {
+          color: $french-pass-blue;
+        }
+      }
+
+      &.active {
+        .address-box {
+          background-image: url('../assets/images/bg-address-box.png');
+        }
+
+        .address-title {
+          border-bottom: 1px solid white;
+        }
+
+        .h6 {
+          color: white;
+        }
+
+        p {
+          color: white;
+        }
+
+        .edit-link {
+          color: white;
+
+          &::before {
+            border-bottom: 2px solid white;
+          }
+        }
+
+        .make-as-default {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    // .section-tabs-banner {
+    //   .custom-tabs  {
+    //     &.large {
+    //       .tabs-bordered {
+    //         .tabs-bordered-item {
+    //           &:not(:last-child) {
+    //             margin-right: 60px; //ltr
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    .edit-account-tab {
+      .edit-account-row {
+        .edit-account-col {
+          width: 48.5%;
+        }
+      }
+
+      .date-input {
+        .date-label {
+          width: 25%;
+          padding: 0 7px;
+        }
+
+        .select-wrapper {
+          width: 25%;
+
+          &::before {
+            top: 11px;
+
+            font-size: 17px;
+          }
+        }
+      }
+    }
+
+    .address-book-tab {
+      .address-item {
+        .address-box {
+          width: 325px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(lg-down) {
+    .edit-account-tab {
+      .edit-account-row {
+        display: block;
+
+        .edit-account-col {
+          width: 100%;
+        }
+      }
+    }
+
+    .address-book-tab {
+      .address-item {
+        margin-bottom: 20px;
+      }
+
+      .address-list-wrapper {
+        @include justify-content(space-around)
+      }
+    }
+  }
+
+  @include respond-to(lg) {
+    .section-tabs-banner {
+      .custom-tabs  {
+        &.large {
+          .tabs-bordered {
+            // .tabs-bordered-item {
+            //   &:not(:last-child) {
+            //     margin-right: 25px; //ltr
+            //   }
+            // }
+
+            .tabs-bordered-link {
+              width: 170px;
+            }
+          }
+        }
+      }
+    }
+
+    .edit-account-tab {
+      .edit-account-row {
+        .edit-account-col {
+          &:first-child {
+            margin-bottom: 35px;
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .section-tabs-banner {
+      .custom-tabs  {
+        &.large {
+          .tabs-bordered {
+            .tabs-bordered-link {
+              width: 160px;
+            }
+          }
+        }
+      }
+    }
+
+    .section-main-content {
+      padding: 40px 0 30px;
+    }
+
+    .edit-account-tab {
+      .edit-account-row {
+        .edit-account-col {
+          &:first-child {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+
+    .address-book-tab {
+      .address-list-wrapper {
+        &:nth-child(2) {
+          margin-bottom: 50px;
+        }
+      }
+
+      .address-item {
+        .address-box {
+          width: 353px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(sm) {
+    .section-tabs-banner {
+      .custom-tabs  {
+        &.large {
+          .tabs-bordered {
+            .tabs-bordered-link {
+              width: 120px;
+            }
+          }
+        }
+      }
+    }
+
+    .address-book-tab {
+      .address-item {
+        .address-box {
+          width: 258px;
+          padding: 27px 22px 12px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .custom-tabs-content {
+      margin-bottom: 0px;
+    }
+
+    .custom-tabs {
+      .content-holder {
+        padding: 22px 0 0;
+      }
+    }
+
+    .section-main-content {
+      padding: 15px 0;
+    }
+
+    .edit-account-tab {
+      .input-group {
+        display: block;
+      }
+
+      .country-of-residence {
+        width: 100%;
+        margin: 0;
+      }
+
+      .custom-input {
+        width: 100%;
+      }
+
+      .date-input {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .edit-account-row {
+        .edit-account-col {
+          &:first-child {
+            margin-bottom: 35px;
+          }
+        }
+      }
+    }
+
+    .address-book-tab {
+      .address-list-wrapper {
+        // @include justify-content(space-around)
+
+        &:nth-child(2) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(xs) {
+    .section-main-content {
+      padding: 7px 0 25px;
+    }
+
+    .section-tabs-banner {
+      .custom-tabs {
+        .tab-holder {
+          width: 100%;
+
+          overflow-x: scroll;
+        }
+
+        &.large {
+          .tabs-bordered {
+            @include flex-wrap(nowrap)
+
+            min-width: 372px;
+
+            // .tabs-bordered-item {
+            //   &:not(:last-child) {
+            //     margin-right: 0; //ltr
+            //   }
+            // }
+
+            .tabs-bordered-link {
+              width: 90px;
+              padding: 10px 5px 0;
+            }
+          }
+        }
+      }
+    }
+
+    .edit-account-tab {
+      .h6 {
+        margin-bottom: 13px;
+      }
+
+      .date-input {
+        margin-bottom: 15px;
+      }
+    }
+
+    .orders-tab {
+      .table-orders {
+        thead {
+          display: none;
+        }
+
+        tbody {
+          tr {
+            border: 0;
+          }
+        }
+
+        tr {
+          display: block;
+          margin-bottom: 4px;
+
+          td {
+            &:not(:first-child) {
+              padding: 4px 19px;
+
+              border-left: 1px solid $whisper-white;
+              border-right: 1px solid $whisper-white;
+            }
+
+            &:first-child {
+              padding: 14px 19px 7px;
+
+              border-bottom: 3px solid;
+            }
+
+            &:nth-child(2) {
+              padding-top: 15px;
+            }
+
+            &:last-child {
+              padding-bottom: 15px;
+
+              border-bottom: 1px solid $whisper-white;
+            }
+          }
+        }
+
+        td {
+          display: block;
+
+          // text-align: right; //ltr
+
+          &::before {
+            content: attr(data-label);
+
+            // float: left; //ltr
+
+            font-family: $font-avenir-roman;
+            font-size: 14px;
+            font-weight: 100;
+            color: $light-gray;
+          }
+        }
+      }
+    }
+
+    .address-book-tab {
+      .heading-holder {
+        margin-bottom: 20px;
+      }
+
+      .address-item {
+        width: 100%;
+
+        .address-box {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.direction-ltr {
+  .my-account {
+    .edit-account-tab {
+      .date-input {
+        .select-wrapper {
+          border-left: 1px solid $gainsboro-grey;
+
+          &::before {
+            right: 10px;
+          }
+        }
+      }
+    }
+
+    .address-book-tab {
+      .address-item {
+        .edit-link {
+          right: 0;
+        }
+
+        .make-as-default {
+          float: right;
+        }
+      }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1499px) {
+      .section-tabs-banner {
+        .custom-tabs  {
+          &.large {
+            .tabs-bordered {
+              .tabs-bordered-item {
+                &:not(:last-child) {
+                  margin-right: 60px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .edit-account-tab {
+        .date-input {
+          .select-wrapper {
+            &::before {
+              right: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(lg) {
+      .section-tabs-banner {
+        .custom-tabs  {
+          &.large {
+            .tabs-bordered {
+              .tabs-bordered-item {
+                &:not(:last-child) {
+                  margin-right: 25px;
+                }
+              }
+
+              // .tabs-bordered-link {
+              //   width: 170px;
+              // }
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(md) {
+      .section-tabs-banner {
+        .custom-tabs  {
+          &.large {
+            .tabs-bordered {
+              .tabs-bordered-item {
+                &:not(:last-child) {
+                  margin-right: 15px;
+                }
+              }
+
+              // .tabs-bordered-link {
+              //   width: 160px;
+              // }
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(xs) {
+      .section-tabs-banner {
+        .custom-tabs {
+          &.large {
+            .tabs-bordered {
+              .tabs-bordered-item {
+                &:not(:last-child) {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .orders-tab {
+        .table-orders {
+          td {
+            text-align: right;
+
+            &::before {
+              float: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.direction-rtl {
+  .my-account {
+    .edit-account-tab {
+      .h6 {
+        text-align: right;
+      }
+
+      .date-input {
+        .select-wrapper {
+          border-right: 1px solid $gainsboro-grey;
+
+          &::before {
+            left: 10px;
+          }
+        }
+      }
+
+      .thankyou-wrapper {
+        text-align: right;
+      }
+    }
+
+    .orders-tab {
+      .table-orders {
+        th,
+        td {
+          text-align: right;
+        }
+      }
+    }
+
+    .address-book-tab {
+      .address-item {
+        .edit-link {
+          left: 0;
+        }
+
+        .make-as-default {
+          float: left;
+        }
+
+        p {
+          text-align: right;
+        }
+      }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1499px) {
+      .section-tabs-banner {
+        .custom-tabs  {
+          &.large {
+            .tabs-bordered {
+              .tabs-bordered-item {
+                &:not(:last-child) {
+                  margin-left: 60px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .edit-account-tab {
+        .date-input {
+          .select-wrapper {
+            &::before {
+              left: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(lg) {
+      .section-tabs-banner {
+        .custom-tabs  {
+          &.large {
+            .tabs-bordered {
+              .tabs-bordered-item {
+                &:not(:last-child) {
+                  margin-left: 25px;
+                }
+              }
+
+              // .tabs-bordered-link {
+              //   width: 170px;
+              // }
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(md) {
+      .section-tabs-banner {
+        .custom-tabs  {
+          &.large {
+            .tabs-bordered {
+              .tabs-bordered-item {
+                &:not(:last-child) {
+                  margin-left: 15px;
+                }
+              }
+
+              // .tabs-bordered-link {
+              //   width: 160px;
+              // }
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(xs) {
+      .section-tabs-banner {
+        .custom-tabs {
+          &.large {
+            .tabs-bordered {
+              .tabs-bordered-item {
+                &:not(:last-child) {
+                  margin-left: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .orders-tab {
+        .table-orders {
+          td {
+            text-align: left;
+
+            &::before {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

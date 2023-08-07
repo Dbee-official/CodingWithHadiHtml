@@ -1,0 +1,999 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the bag-review component.
+// -----------------------------------------------------------------------------
+
+.bag-review {
+  label {
+    position: relative;
+
+    padding-left: 20px;
+    margin: 14px 0 0;
+
+    input {
+      position: absolute;
+
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 15px;
+      height: 15px;
+
+      background-color: #fff;
+      border: 1px solid $gray-border;
+
+      &:after {
+        content: "";
+
+        position: absolute;
+
+        top: -3px;
+        left: 3px;
+
+        display: none;
+        width: 8px;
+        height: 14px;
+
+        border: solid $cello-blue;
+        border-width: 0 2px 2px 0;
+
+        @include transform(rotate(45deg));
+      }
+    }
+  }
+
+  .item-review {
+    margin-bottom: 22px;
+  }
+
+  .heading {
+    margin-bottom: 11px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      @include flexbox;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    li {
+      padding: 0 0 0 1px;
+      margin: 0;
+      max-width: 100%;
+
+      font-size: 14px;
+      color: $nobel-grey;
+
+      &:before {
+        display: none;
+      }
+
+      &:nth-child(1) {
+        @include flex(0 0 15.5%);
+      }
+
+      &:nth-child(2) {
+        @include flex(0 0 24.5%);
+      }
+
+      &:nth-child(3) {
+        @include flex(0 0 17%);
+      }
+
+      &:nth-child(4) {
+        @include flex(0 0 19%);
+      }
+
+      &:nth-child(5) {
+        @include flex(0 0 14%);
+      }
+
+      &:nth-child(6) {
+        @include flex(0 0 10%);
+      }
+    }
+  }
+
+  .holder-item {
+    border: 1px solid $gray-border;
+  }
+
+  .holder-summary {
+    @include flexbox;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    @include align-items(center);
+    padding: 20px 0;
+
+    .holder-image {
+      @include flexbox;
+      @include flex(0 0 15.5%);
+      height: 100px;
+
+      .holder-image-inner {
+        position: relative;
+
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+
+        margin: unset;
+        margin-right: 16%;
+        margin-left: 16%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: inline;
+        margin: auto auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    .holder-text {
+      @include flexbox;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      @include flex(1%);
+
+      .holder-title {
+        @include flex(0 0 29%);
+        padding-right: 15px;
+
+        p {
+          margin-bottom: 0;
+
+          font: normal 14px $font-avenir-black;
+          line-height: 16px;
+          color: $dark-grey;
+        }
+
+        label {
+          display: block;
+
+          font: normal 12.8px $font-avenir-roman;
+          color: $gray;
+
+          cursor: pointer;
+        }
+      }
+
+      .holder-quantity {
+        @include flexbox;
+        @include flex(0 0 20%);
+        @include align-items(center);
+
+        select {
+          padding: 5px;
+          width: 55px;
+          height: 40px;
+
+          font: normal 12px $font-avenir-black;
+          color: $dim-grey;
+
+          background: #fff;
+          border: 1px solid $light-grey;
+          outline: none;
+
+          cursor: pointer;
+        }
+      }
+
+      .holder-amount {
+        @include flexbox;
+        @include flex(0 0 16.5%);
+        @include align-items(center);
+
+        p {
+          margin-bottom: 0;
+
+          font: normal 14px $font-avenir-black;
+          color: $dark-grey;
+        }
+      }
+
+      .holder-price {
+        @include flexbox;
+        @include flex(0 0 22.5%);
+        @include align-items(center);
+
+        p {
+          margin-bottom: 0;
+
+          font: normal 14px $font-avenir-black;
+          color: $dark-grey;
+        }
+      }
+
+      .holder-remove {
+        @include flexbox;
+        @include flex(0 0 12%);
+        @include align-items(center);
+        padding-right: 22px;
+
+        .remove {
+          display: block;
+          margin-right: 0;
+          margin-left: auto;
+
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .holder-giftwrap {
+    padding-bottom: 20px;
+    margin-top: 7px;
+
+    .giftwrap-input {
+      margin-right: 20px;
+      margin-left: 20px;
+      max-width: 717px;
+
+      .holder-inputs {
+        @include flexbox;
+        margin-bottom: 20px;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+
+      input {
+        padding: 10px 15px;
+        margin: 0;
+        width: 100%;
+        max-width: 350px;
+        height: 52px;
+
+        font: normal 12.8px $font-avenir-roman;
+        color: $gray;
+
+        border: 1px solid $gainsboro;
+
+        @include transition(all 0.3s ease-in-out);
+
+        &:focus {
+          border-color: $cello-blue;
+        }
+
+        &:first-child {
+          margin-right: 17px;
+        }
+      }
+
+      textarea {
+        display: block;
+        padding: 10px 15px;
+        margin: 0;
+        width: 100%;
+        height: 115px;
+
+        font: normal 12.8px $font-avenir-roman;
+        color: $gray;
+
+        border: 1px solid $gainsboro;
+
+        resize: none;
+        @include transition(all 0.3s ease-in-out);
+
+        &:focus {
+          border-color: $cello-blue;
+        }
+      }
+
+      .holder-button {
+        @include flexbox;
+        margin: 24px 0 15px;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        max-width: 405px;
+
+        ._btn {
+          width: 100%;
+          max-width: 195px;
+          height: 50px;
+          max-height: 50px;
+
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .giftwrap-label {
+      .giftwrap {
+        position: relative;
+
+        @include flexbox;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        @include align-items(center);
+        padding: 25px 0 7px;
+
+        &:before {
+          content: '';
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+
+          margin: auto;
+          width: 96%;
+          height: 1px;
+
+          background-color: $gray-border;
+        }
+      }
+
+      .holder-image-label {
+        @include flexbox;
+        @include flex(0 0 15.5%);
+        @include justify-content(center);
+        @include align-items(center);
+        height: 100px;
+
+        span {
+          position: relative;
+
+          margin-right: 14.5%;
+          margin-left: 14.5%;
+          width: 100%;
+          max-width: 110px;
+
+          font-size: 51px;
+          color: $licorice-grey;
+          text-align: center;
+
+          &:before {
+            position: relative;
+            z-index: 5;
+          }
+
+          &:after {
+            content: '';
+
+            position: absolute;
+            top: -50%;
+            left: 0;
+            z-index: 1;
+
+            width: 100%;
+            height: 100px;
+
+            background-color: $oyster-bay;
+          }
+        }
+      }
+
+      .holder-text-label {
+        @include flexbox;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        @include flex(1%);
+
+        .holder-label {
+          @include flex(0 0 29%);
+          padding-right: 7%;
+
+          h4 {
+            margin-bottom: 0;
+
+            font: normal 14px $font-avenir-black;
+            color: $text-color;
+          }
+
+          h5 {
+            margin: 4px 0 0;
+
+            font: normal 13px $font-avenir-black;
+            letter-spacing: -.5px;
+            color: $text-color;
+
+            span {
+              font-family: $font-avenir-roman;
+              letter-spacing: 0;
+            }
+          }
+
+          p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            line-height: 1.5;
+            color: $gray;
+          }
+        }
+
+        .holder-empty:nth-of-type(2) {
+          @include flexbox;
+          @include flex(0 0 20%);
+          @include align-items(center);
+        }
+
+        .holder-empty:nth-of-type(3) {
+          @include flexbox;
+          @include flex(0 0 22.5%);
+          @include align-items(center);
+        }
+
+        .holder-empty:nth-of-type(4) {
+          @include flexbox;
+          @include flex(0 0 16.5%);
+          @include align-items(center);
+        }
+
+        .holder-edit-remove {
+          @include flexbox;
+          @include flex(0 0 12%);
+          @include align-items(center);
+          padding-right: 22px;
+
+          img {
+            cursor: pointer;
+          }
+
+          .holder-edit {
+            margin-right: 16%;
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .all-giftwrap {
+    margin-top: 33px;
+
+    .all-giftwrap-heading {
+      margin-top: 16px;
+
+      h3 {
+        margin: 0 0 8px;
+
+        font: normal 14.5px $font-avenir-black;
+        line-height: 16px;
+        color: $text-color;
+      }
+
+      label {
+        margin: 0 0 0 5px;
+
+        font: normal 12.8px $font-avenir-roman;
+        color: $gray;
+
+        cursor: pointer;
+
+        &:first-of-type {
+          margin-right: 50px;
+        }
+      }
+    }
+
+    .holder-giftwrap .giftwrap-input {
+      margin-left: 0;
+    }
+
+    .holder-giftwrap .giftwrap-label .giftwrap {
+      padding: 25px 0;
+
+      border: 1px solid $gray-border;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .order-summary {
+    width: 100%;
+
+    .amount.border-bottom {
+      margin-top: 14px;
+    }
+  }
+
+  @include respond-to(lg) {
+    .order-summary .summary-details {
+      padding: 25px 15px 10px;
+    }
+
+    .order-summary .amount {
+      padding: 1.2rem 8px 0;
+    }
+
+    .holder-giftwrap .giftwrap-label .holder-text-label {
+      .holder-empty {
+        &:nth-of-type(3) {
+          @include flex(0 0 19.5%);
+        }
+
+        &:nth-of-type(4) {
+          @include flex(0 0 13.5%);
+        }
+      }
+
+      .holder-edit-remove {
+        @include flex(0 0 14%);
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .holder-giftwrap .giftwrap-input {
+      margin: 0 10px;
+      max-width: none;
+
+      input {
+        max-width: none;
+
+        &:first-child {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .all-giftwrap .holder-giftwrap .giftwrap-input {
+      margin: 0;
+    }
+  }
+
+  @include respond-to(md-down) {
+    .holder {
+      overflow-x: hidden;
+    }
+
+    .holder-giftwrap .giftwrap-input .holder-button {
+      max-width: 345px;
+
+      ._btn {
+        height: 40px;
+        max-height: 40px;
+
+        &:first-child {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .col-custom-wide {
+      margin-top: 30px;
+    }
+
+    .holder-summary {
+      .holder-image {
+        @include flex(0 0 26.5%);
+
+        .holder-image-inner {
+          width: 50px;
+        }
+
+        img {
+          margin: 0 auto;
+        }
+      }
+
+      .holder-text {
+        display: block;
+
+        .holder-quantity {
+          position: relative;
+
+          padding: 12px 0 18px;
+
+          &:before {
+            content: 'Quantity';
+
+            position: relative;
+            top: 0;
+            left: 0;
+
+            display: inline-block;
+            width: 40%;
+
+            font: normal 14px $font-avenir-medium;
+            color: $mid-grey;
+          }
+
+          input {
+            position: relative;
+
+            top: 3px;
+
+            width: 33px;
+          }
+        }
+
+        .holder-price {
+          position: relative;
+
+          display: inline-block;
+          padding-right: 0;
+          width: 40%;
+
+          text-align: left;
+
+          &:before {
+            content: 'Price';
+
+            position: relative;
+            top: 0;
+            left: 0;
+
+            display: block;
+
+            font: normal 14px $font-avenir-medium;
+            color: $mid-grey;
+          }
+
+          p {
+            margin-top: 4px;
+          }
+        }
+
+        .holder-amount {
+          position: relative;
+
+          display: inline-block;
+
+          &:before {
+            content: 'Amount';
+
+            position: relative;
+            top: 0;
+            left: 0;
+
+            display: block;
+
+            font: normal 14px $font-avenir-medium;
+            color: $mid-grey;
+          }
+
+          p {
+            margin-top: 4px;
+          }
+        }
+
+        .holder-remove {
+          display: block;
+          padding-right: 10px;
+
+          label {
+           display: block;
+
+           font: normal 12.8px $font-avenir-roman;
+           color: $gray;
+         }
+
+         .remove {
+           margin-top: 10px;
+           margin-bottom: -10px;
+         }
+        }
+      }
+    }
+
+    .holder-giftwrap {
+      .giftwrap-input {
+        margin: 0 10px;
+
+        .holder-inputs {
+          display: block;
+          margin: 0;
+
+          input {
+            max-width: none;
+            height: 53px;
+
+            &:first-child {
+              margin: 0;
+            }
+
+            &:last-child {
+              margin: 8px 0;
+            }
+          }
+
+          textarea {
+            height: 122px;
+          }
+        }
+
+        .holder-button {
+          display: block;
+          margin: 17px 0 15px;
+          max-width: none;
+
+          ._btn {
+            display: block;
+            padding: 17px 0;
+            margin: 0;
+            width: 100%;
+            max-width: none;
+            height: 54px;
+            max-height: 54px;
+
+            &:first-child {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+
+      .giftwrap-label {
+        .holder-image-label {
+          @include flex(0 0 26.5%);
+
+          span {
+            font-size: 35px;
+
+            &:before {
+              top: -25px;
+            }
+
+            &:after {
+              top: -40px;
+              height: 65px;
+            }
+          }
+        }
+
+        .holder-text-label {
+          display: block;
+
+          .holder-empty {
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+              display: none;
+            }
+          }
+
+          .holder-edit-remove {
+            padding-right: 10px;
+            margin-top: 10px;
+            margin-bottom: -10px;
+
+            .holder-edit {
+              margin-right: 8%;
+            }
+          }
+        }
+      }
+    }
+
+    .all-giftwrap {
+      .holder-giftwrap .giftwrap-input {
+        margin: 0;
+      }
+    }
+
+    .order-summary {
+      margin-top: 7px;
+
+      .summary-details {
+        padding: 36px 8px 7px;
+      }
+
+      .summary-details-title {
+        margin-bottom: 19px;
+      }
+
+      .amount {
+        padding: 1.2rem 18px 0;
+
+        &.border-bottom {
+          margin-top: 11px;
+        }
+
+        &.total-amount {
+          margin-top: 9px;
+        }
+      }
+
+      .btn-dark-blue {
+        margin: 29px 0 6px;
+      }
+
+      .btn-dark-blue,
+      .btn-apply,
+      .btn-header-sidebar {
+        height: 52px;
+        max-height: 52px;
+      }
+    }
+  }
+}
+
+.direction-rtl .bag-review {
+  .heading li {
+    padding-right: unset;
+    padding-left: unset;
+  }
+
+  label {
+    padding-right: 20px;
+    padding-left: unset;
+
+    .checkmark {
+      right: 0;
+      left: unset;
+
+      &:after {
+        right: 3px;
+        left: unset;
+      }
+    }
+  }
+
+  .item-review {
+    text-align: right;
+  }
+
+  .holder-summary {
+    .holder-text .holder-title {
+      padding-right: unset;
+      padding-left: 15px;
+    }
+
+    .holder-text .holder-remove {
+      padding-right: unset;
+      padding-left: 22px;
+
+      .remove {
+        margin-right: auto;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .holder-giftwrap {
+    .giftwrap-input {
+      input:first-child {
+        margin-right: unset;
+        margin-left: 17px;
+      }
+    }
+
+    .giftwrap-label {
+      .holder-text-label .holder-label {
+        padding-right: unset;
+        padding-left: 7%;
+      }
+
+      .holder-text-label .holder-edit-remove {
+        padding-right: unset;
+        padding-left: 22px;
+
+        .holder-edit {
+          margin-right: auto;
+          margin-left: 16%;
+        }
+      }
+    }
+  }
+
+  .all-giftwrap {
+    text-align: right;
+
+    .all-giftwrap-heading label {
+      margin: 0 5px 0 0;
+
+      &:first-of-type {
+        margin-right: unset;
+        margin-left: 50px;
+      }
+    }
+
+    .holder-giftwrap .giftwrap-input {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+  @include respond-to(md-down) {
+    .holder-giftwrap .giftwrap-input .holder-button {
+      ._btn {
+        &:first-child {
+          margin-right: unset;
+          margin-left: 19px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .holder-giftwrap .giftwrap-input .holder-button {
+      ._btn {
+        &:first-child {
+          margin-right: unset;
+          margin-left: 19px;
+        }
+      }
+    }
+
+    .holder-summary .holder-text .holder-price {
+      text-align: right;
+    }
+
+    .holder-giftwrap .giftwrap-label .holder-text-label .holder-edit-remove .holder-edit {
+      margin-left: 8%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -1,0 +1,373 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------------------
+// This file contains all styles related to the tabs banner component.
+// Note: The tabs are highly dependent on the styles of the tabs under "custom-tabs.scss"
+// -----------------------------------------------------------------------------------------
+.section-tabs-banner {
+  .banner-wrap {
+    padding-top: 64px;
+    padding-bottom: 77px;
+
+    text-align: center;
+
+    background-image: url(../assets/images/bg-banner-blue.png);
+    background-size: cover;
+    background-position: center;
+
+    h1 {
+      font-family: $font-avenir-heavy;
+      font-size: 30px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      line-height: 12px;
+
+      li {
+        display: inline-block;
+
+        font-family: $font-avenir-medium;
+        font-size: 12px;
+        color: #fff;
+
+        a {
+          color: #fff;
+        }
+
+        & + li {
+          &:before {
+            display: inline-block;
+            padding-right: 5px;
+
+            content: '/';
+          }
+        }
+      }
+    }
+  }
+
+  .custom-tabs {
+    margin-top: -24px;
+
+    .tab-holder {
+      padding-top: 0;
+
+      background-color: #fff;
+    }
+
+    &.large {
+      .tabs-bordered {
+        .tabs-bordered-item {
+          &:not(:last-child) {
+            margin-right: 120px;
+          }
+        }
+
+        .tabs-bordered-link {
+          padding-top: 30px;
+          padding-bottom: 29px;
+          width: 240px;
+
+          font-family: $font-avenir-heavy;
+          font-size: 15px;
+          color: $tarawera-grey;
+          text-align: center;
+
+          &:before {
+            height: 4px;
+
+            background-color: $onahau-blue;
+          }
+
+           &.active {
+             &:after {
+               border-width: 4px;
+               border-color: $onahau-blue;
+             }
+           }
+        }
+      }
+    }
+  }
+}
+
+// Right To Left Mode
+.direction-rtl {
+  .section-tabs-banner {
+    .banner-wrap {
+      ul {
+        li {
+          & + li {
+            &:before {
+              padding-left: 5px;
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .custom-tabs {
+      &.large {
+        .tabs-bordered {
+          padding: 0;
+          .tabs-bordered-item {
+            &:not(:last-child) {
+              margin-left: 120px;
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(xs) {
+  .section-tabs-banner {
+    .banner-wrap {
+      padding-top: 26px;
+      padding-bottom: 44px;
+
+      h1 {
+        margin-bottom: 12px;
+
+        font-size: 18px;
+      }
+
+      ul {
+        li {
+          & + li {
+            &:before {
+              padding-right: 0;
+              margin-left: -3px;
+            }
+          }
+        }
+      }
+    }
+
+    .custom-tabs {
+      &.large {
+        .custom-container {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .tabs-bordered {
+          padding-top: 12px;
+
+          .tabs-bordered-item {
+            width: auto;
+            &:not(:last-child) {
+              margin-right: 20px;
+            }
+          }
+
+          .tabs-bordered-link {
+            padding: 10px 15px 0;
+            width: 85px;
+            height: 55px;
+
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  // Right To Left Mode
+  .direction-rtl {
+    .section-tabs-banner {
+      .banner-wrap {
+        ul {
+          li {
+            & + li {
+              &:before {
+                margin-right: -3px;
+              }
+            }
+          }
+        }
+      }
+
+      .custom-tabs {
+        &.large {
+          .tab-holder {
+            padding-top: 0;
+          }
+          
+          .tabs-bordered {
+            padding-top: 12px;
+
+            .tabs-bordered-item {
+              &:not(:last-child) {
+                margin-left: 20px;
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(sm) {
+  .section-tabs-banner {
+    .banner-wrap {
+      padding-top: 26px;
+      padding-bottom: 44px;
+
+      h1 {
+        margin-bottom: 12px;
+
+        font-size: 18px;
+      }
+
+      ul {
+        li {
+          & + li {
+            &:before {
+              padding-right: 0;
+              margin-left: -3px;
+            }
+          }
+        }
+      }
+    }
+
+    .custom-tabs {
+      &.large {
+        .custom-container {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .tabs-bordered {
+          padding-top: 12px;
+
+          .tabs-bordered-item {
+            width: auto;
+            &:not(:last-child) {
+              margin-right: 20px;
+            }
+          }
+
+          .tabs-bordered-link {
+            padding: 10px 15px 0;
+            width: 85px;
+            height: 55px;
+
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  // Right To Left Mode
+  .direction-rtl {
+    .section-tabs-banner {
+      .custom-tabs {
+        &.large {
+          .tab-holder {
+            padding-top: 0;
+          }
+          .tabs-bordered {
+            padding-top: 12px;
+
+            .tabs-bordered-item {
+              &:not(:last-child) {
+                margin-left: 20px;
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(md) {
+  .section-tabs-banner {
+    .custom-tabs {
+      &.large {
+        .tabs-bordered {
+          .tabs-bordered-item {
+            &:not(:last-child) {
+              margin-right: 60px;
+            }
+          }
+
+          .tabs-bordered-link {
+            width: 160px;
+          }
+        }
+      }
+    }
+  }
+
+  // Right To Left Mode
+  .direction-rtl {
+    .section-tabs-banner {
+      .custom-tabs {
+        &.large {
+          .tabs-bordered {
+            .tabs-bordered-item {
+              &:not(:last-child) {
+                margin-left: 60px;
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .section-tabs-banner {
+    .custom-tabs {
+      &.large {
+        .tabs-bordered {
+          .tabs-bordered-item {
+            &:not(:last-child) {
+              margin-right: 60px;
+            }
+          }
+
+          .tabs-bordered-link {
+            width: 160px;
+          }
+        }
+      }
+    }
+  }
+
+  // Right To Left Mode
+  .direction-rtl {
+    .section-tabs-banner {
+      .custom-tabs {
+        &.large {
+          .tabs-bordered {
+            .tabs-bordered-item {
+              &:not(:last-child) {
+                margin-left: 60px;
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

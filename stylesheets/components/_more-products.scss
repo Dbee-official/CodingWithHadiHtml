@@ -1,0 +1,36 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the more products component.
+// -----------------------------------------------------------------------------
+
+.more-products {
+  position: relative;
+
+  display: inline-block;
+
+  font: normal 13px $font-avenir-heavy;
+  text-transform: uppercase;
+  color: $french-pass-blue;
+
+  cursor: pointer;
+  @include transition(all 0.3s linear);
+
+  &:before {
+    content: '';
+
+    position: absolute;
+    bottom: -7px;
+    left: calc(50% - 75px);
+
+    margin: auto;
+    width: 150px;
+
+    border: 0.5px solid;
+  }
+
+  @include on-event() {
+    color: $tarawera-grey;
+    text-decoration: none;
+  }
+}

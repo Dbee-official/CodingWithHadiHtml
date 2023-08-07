@@ -1,0 +1,161 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the order summary component.
+// -----------------------------------------------------------------------------
+.order-summary {
+  padding: 15px;
+  margin-top: 36px;
+
+  width: 86%;
+  max-height: 630px;
+
+  background-image: url('../assets/images/bg-order-summary.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+
+  .summary-details {
+    padding: 35px 20px 35px;
+
+    background: #fff;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  .summary-details-title {
+    margin-bottom: 1rem;
+
+    color: $tarawera-grey;
+    text-align: center;
+    font-family: $text-avenir-heavy;
+    font-size: 15px;
+  }
+
+  .payment-method-holder {
+    margin-top: 20px;
+    padding: 20px 15px;
+
+    background: $light-onahau-blue;
+
+    .payment-method-title {
+      margin-bottom: 0;
+
+      font-size: 14px;
+      font-family: $font-avenir-medium;
+    }
+
+    .custom-input-label {
+      color: $tarawera-grey;
+      font-size: 14px;
+      font-family: $font-avenir-roman;
+
+      &.disable {
+        color: $gray;
+      }
+    }
+  }
+
+  .amount {
+    @include flexbox();
+    padding: .8rem 10px 0;
+
+    .amount-title {
+      font-size: 14px;
+      font-family: $font-avenir-heavy;
+    }
+
+    .total {
+      font-size: 16px;
+      font-family: $font-avenir-black;
+    }
+
+    &.vat {
+      padding-top: 1.2rem;
+    }
+
+    &.total-amount {
+      @extend .vat;
+      background: $light-onahau-blue;
+    }
+  }
+
+  .btn-dark-blue,
+  .btn-header-sidebar {
+    width: 100%;
+  }
+
+  .btn-dark-blue {
+    height: 46px;
+    margin-top: 2rem;
+  }
+
+  .btn-header-sidebar {
+    padding: 15px 0;
+
+    border-width: 1px;
+  }
+}
+
+.direction-ltr {
+  .order-summary {
+    margin-left: auto;
+
+    .amount-title {
+      margin-right: auto;
+    }
+    .total {
+      margin-left: auto;
+    }
+
+    & + label:before {
+      content: '';
+      margin-right: 8px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 17px;
+      height: 17px;
+      background: white;
+    }
+  }
+}
+
+.direction-rtl {
+  .order-summary {
+    margin-right: auto;
+
+    text-align: right;
+
+    .amount-title {
+      margin-left: auto;
+    }
+    .total {
+      margin-right: auto;
+    }
+  }
+}
+
+@include respond-to("lg-down") {
+  .order-summary {
+    width: 100%;
+  }
+}
+
+@include respond-to("md-down") {
+  .order-summary {
+    margin: auto;
+    width: 50%;
+  }
+}
+
+@include respond-to("sm-down") {
+  .order-summary {
+    width: 70%;
+  }
+}
+
+@include respond-to("xs") {
+  .order-summary {
+    width: 100%;
+  }
+}

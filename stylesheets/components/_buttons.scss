@@ -1,0 +1,367 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+._btn {
+  font-family: $font-avenir-heavy;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  @include transition(all .3s linear);
+
+  @include on-event() {
+    outline: none;
+  }
+
+  @include respond-to(md) {
+    font-size: 13px;
+  }
+}
+
+.btn-white {
+  color: $tarawera-grey;
+
+  background-color: white;
+  border: 1.5px solid transparent;
+
+  @include on-event() {
+    color: white;
+
+    background-color: transparent;
+    border: 1.5px solid white;
+  }
+}
+
+.btn-dark-blue {
+  background-color: $tarawera-grey;
+  border: 1.5px solid transparent;
+
+  a {
+    color: #fff;
+  }
+
+  @include on-event() {
+    color: $tarawera-grey;
+
+    background-color: transparent;
+    border: 1.5px solid $tarawera-grey;
+
+    a {
+      color: $tarawera-grey;
+    }
+  }
+}
+
+.btn-light-blue {
+  background-color: $french-pass-blue;
+  border: 1.5px solid transparent;
+
+  @include on-event() {
+    color: $french-pass-blue;
+
+    background-color: transparent;
+    border: 1.5px solid $french-pass-blue;
+  }
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: 1.5px solid white;
+
+  @include on-event() {
+    color: $tarawera-grey;
+
+    background-color: white;
+  }
+}
+
+.btn-contact {
+  width: 174px;
+  height: 51px;
+}
+
+.btn-large {
+  padding: 15px 49px;
+
+  @include respond-to(md-down) {
+    padding: 10px 18px;
+  }
+}
+
+.btn-small {
+  padding: 8px 16px;
+}
+
+.btn-header-sidebar {
+  width: 203px;
+  height: 46px;
+
+  color: $tarawera-grey;
+
+  background-color: transparent;
+  border: 1.5px solid $tarawera-grey;
+
+  @include transition(all .3s linear)
+
+  @include on-event() {
+    color: white;
+
+    background-color: $tarawera-grey;
+  }
+}
+
+.btn-sigin-sidebar {
+  width: 350px;
+  height: 51px;
+
+  @include respond-to(xs) {
+    width: 100%;
+  }
+}
+
+.btn-footer {
+  width: 142px;
+  height: 45px;
+
+  @include on-event() {
+    color: $french-pass-blue;
+  }
+
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    width: 130px;
+  }
+
+  @include respond-to(lg) {
+    width: 110px;
+    height: 37px;
+  }
+}
+
+.btn-account {
+  width: 211px;
+  height: 51px;
+
+  @include respond-to(xs) {
+    width: 100%;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 21px;
+  z-index: 50;
+
+  width: 35px;
+  height: 35px;
+
+  color: #000;
+
+  opacity: 1;
+
+  span {
+    position: absolute;
+    top: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+
+      width: 2px;
+      height: 30px;
+
+      background-color: #000;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include on-event() {
+    outline: none;
+  }
+
+  &.close-white {
+    span {
+      &::before,
+      &::after {
+        background-color: white;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    span {
+      top: 7px;
+    }
+
+    &.center-mobile {
+      width: 100%;
+    }
+  }
+}
+
+.btn-reset {
+  font-size: 14px;
+  color: $tarawera-grey;
+  text-decoration: underline;
+
+  background: transparent;
+  border: 0;
+}
+
+.btn-close {
+  padding: .2px 4px;
+
+  font-size: 12px;
+  color: #fff;
+
+  background: $french-pass-blue;
+}
+
+.btn-facebook {
+  background-color: $facebook-blue;
+  border: 1.5px solid transparent;
+
+  @include on-event() {
+    color: $facebook-blue;
+
+    background-color: transparent;
+    border: 1.5px solid $facebook-blue;
+  }
+}
+
+.btn-quickview {
+  padding: 10px;
+  margin-right: 1px;
+  width: 100%;
+
+  background: $tarawera-grey;
+  color: #fff;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: .5s;
+  a { color: #fff; }
+
+  @include on-event {
+    background: $french-pass-blue;
+    a { text-decoration: none; }
+  }
+
+  .fa-plus-circle {
+    padding-top: 2px;
+    font-size: 18px;
+  }
+
+  @include respond-to(sm-down) {
+    padding: 5px;
+  }
+}
+
+.btn-add-to-bag {
+  @extend .btn-quickview;
+  margin-right: 0;
+}
+
+.btn-filter {
+  @extend .btn-light-blue;
+
+  padding: 5px 50px;
+  margin: auto;
+  width: 150px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.btn-apply {
+  @extend .btn-dark-blue;
+  padding: 10px 20px;
+  a { color: #fff; }
+}
+
+.direction-ltr {
+  .close {
+    right: 18px;
+
+    span {
+      left: 0;
+      right: 0;
+
+      &::before,
+      &::after {
+        left: 15px;
+      }
+    }
+
+    @include respond-to(sm-down) {
+      span {
+        right: 4px;
+      }
+
+      &.center-mobile {
+        right: 0;
+
+        span {
+          left: calc(50% - 16px);
+        }
+      }
+    }
+  }
+}
+
+.direction-rtl {
+  .close {
+    left: 18px;
+
+    span {
+      left: 0;
+      right: 0;
+
+      &::before,
+      &::after {
+        right: 15px;
+      }
+    }
+
+    @include respond-to(sm-down) {
+      span {
+        left: 4px;
+      }
+
+      &.center-mobile {
+        left: 0;
+
+        span {
+          right: calc(50% - 16px);
+        }
+      }
+    }
+  }
+}
+
+.btn-play-holder{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  vertical-align: middle;
+  display: flex;
+
+  cursor: pointer;
+
+  @include respond-to(sm-down){
+    img{width: 25% !important;}
+  }
+}

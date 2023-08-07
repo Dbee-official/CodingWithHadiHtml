@@ -1,0 +1,153 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section product features.
+// -----------------------------------------------------------------------------
+
+.section-features {
+  padding: 45px 0;
+
+  .product-features-wrapper {
+    .product-features-item {
+      @include flexbox()
+      @include align-items(center)
+      @include justify-content(center)
+
+      width: 25%;
+    }
+
+    .product-features-text {
+      margin-bottom: 0;
+
+      font-family: $font-avenir-heavy;
+      font-size: 16px;
+      line-height: 17px;
+
+      cursor: pointer;
+
+      @include transition(all .3s linear);
+
+      @include on-event() {
+        color: $french-pass-blue;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .product-features-wrapper {
+      .product-features-image {
+        height: 46px;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    padding: 25px 0;
+
+    .product-features-wrapper {
+      .product-features-image {
+        height: 30px;
+      }
+
+      .product-features-text {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @include respond-to(xs) {
+    .custom-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .product-features-wrapper {
+      width: 489px;
+
+      .product-features-image {
+        height: 23px;
+        margin-bottom: 22px;
+      }
+
+      .product-features-item {
+        display: block;
+
+        text-align: center;
+      }
+
+      .product-features-text {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.direction-ltr {
+  .section-features {
+    .product-features-wrapper {
+      .product-features-image {
+        margin-right: 20px;
+      }
+
+      .product-features-item {
+        border-left: 1px solid $whisper-white;
+
+        &:last-child {
+          border-right: 1px solid $whisper-white;
+        }
+      }
+    }
+
+    @include respond-to(sm-down) {
+      .product-features-wrapper {
+        .product-features-image {
+          margin-right: 7px;
+        }
+      }
+    }
+
+    @include respond-to(xs) {
+      .product-features-wrapper {
+        .product-features-image {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.direction-rtl {
+  .section-features {
+    .product-features-wrapper {
+      .product-features-image {
+        margin-left: 20px;
+      }
+
+      .product-features-item {
+        border-right: 1px solid $whisper-white;
+
+        &:last-child {
+          border-left: 1px solid $whisper-white;
+        }
+      }
+    }
+
+    @include respond-to(sm-down) {
+      .product-features-wrapper {
+        .product-features-image {
+          margin-left: 7px;
+        }
+      }
+    }
+
+    @include respond-to(xs) {
+      .product-features-wrapper {
+        .product-features-image {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

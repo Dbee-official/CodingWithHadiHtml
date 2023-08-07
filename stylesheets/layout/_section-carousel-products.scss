@@ -1,0 +1,25 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section-carousel-products of the site.
+// -----------------------------------------------------------------------------
+
+.section-carousel-products {
+  margin-top: 64px;
+
+  .more-products {
+    margin-top: 31px;
+  }
+
+  @include respond-to(sm-down) {
+    margin: 0;
+
+    .custom-container {
+      padding: 0;
+    }
+
+    .description-holder {
+      padding: 0 15px;
+    }
+  }
+}

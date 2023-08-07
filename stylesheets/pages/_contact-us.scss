@@ -1,0 +1,484 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the contact us page.
+// -----------------------------------------------------------------------------
+
+.contact-us {
+  .section-contact-us {
+    margin-bottom: 71px;
+
+    background-image: url('../assets/images/bg-contact.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .section-wrapper {
+      width: 1316px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .breadcrumb {
+      padding-top: 34px;
+
+      .breadcrumb-item,
+      a {
+        color: white;
+      }
+
+      .breadcrumb-item {
+        &::before {
+          color: white;
+        }
+      }
+    }
+
+    .inline-inputs {
+      @include flexbox()
+      @include justify-content(space-between)
+    }
+
+    .custom-input {
+      width: 295px;
+      margin-bottom: 18px;
+      padding: 16px 10px;
+
+      border: 1px solid #dbdbdb;
+    }
+  }
+
+  .contact-us-content {
+    height: 680px;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 0 63px;
+  }
+
+  .contact-us-col {
+    position: relative;
+
+    @include flexbox()
+    @include justify-content(center)
+
+    padding: 46px 0 119px;
+
+    .col-wrapper {
+      position: relative;
+    }
+
+    &.left {
+      position: relative;
+
+      // -webkit-box-flex: 0;
+      // -webkit-flex: 0 0 53%;
+      // -ms-flex: 0 0 53%;
+      // flex: 0 0 53%;
+      //
+      // max-width: 53%;
+
+      background-color: white;
+
+      .col-wrapper,
+      .thankyou-wrapper {
+        width: 607px;
+      }
+
+      .col-wrapper {
+
+      }
+
+      .thankyou-content {
+        position: absolute;
+        top: calc(50% - 33px);
+
+        height: 66px;
+      }
+    }
+
+    &.right {
+      // -webkit-box-flex: 0;
+      // -webkit-flex: 0 0 47%;
+      // -ms-flex: 0 0 47%;
+      // flex: 0 0 47%;
+      //
+      // max-width: 47%;
+
+      background-color: rgba(255, 255, 255, .2);
+
+      .col-wrapper {
+        width: 519px;
+      }
+    }
+
+    .contact-subheading {
+      margin-bottom: 31px;
+      padding-bottom: 23px;
+
+      border-bottom: 1px solid gainsboro;
+    }
+
+    textarea {
+      width: 100%;
+      height: 114px;
+      padding: 13px 11px;
+
+      font-family: $font-avenir-medium;
+      font-size: 13px;
+
+      background-color: white;
+      border: 1px solid $gainsboro-grey;
+
+      resize: none;
+
+      @include on-event() {
+        outline: none;
+      }
+
+      @include placeholder() {
+        color: $matterhorn-grey;
+      }
+    }
+
+    .btn-contact {
+      position: absolute;
+      bottom: -77px;
+    }
+  }
+
+  .contact-info-wrapper {
+    position: relative;
+
+    margin-bottom: 48px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+
+      font-family: 'FontAwesome';
+      font-size: 26px;
+      color: white;
+    }
+
+    &.address {
+      &::before {
+        content: '\f041';
+      }
+    }
+
+    &.phone {
+      &::before {
+        content: '\f095';
+      }
+    }
+
+    &.email {
+      &::before {
+        content: '\f0e0';
+      }
+
+      p {
+        padding-top: 9px;
+      }
+    }
+  }
+
+  .contact-info-content {
+    p {
+      margin-bottom: 0;
+
+      font-family: $font-avenir-medium;
+      font-size: 13px;
+      color: white;
+      line-height: 19.5px;
+    }
+  }
+
+  @media screen and (max-width: 1350px) {
+    .section-contact-us {
+      .section-wrapper {
+        width: 95%;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) and (max-width: 1300px) {
+    .section-contact-us {
+      .custom-input {
+        width: 267px;
+      }
+    }
+    .contact-us-col {
+      &.left {
+        .col-wrapper,
+        .thankyou-wrapper {
+          width: 550px;
+        }
+      }
+
+      &.right {
+        .col-wrapper {
+          width: 470px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(lg) {
+    .section-contact-us {
+      .custom-input {
+        width: 225px;
+      }
+    }
+    .contact-us-col {
+      &.left {
+        .col-wrapper,
+        .thankyou-wrapper {
+          width: 465px;
+        }
+      }
+
+      &.right {
+        .col-wrapper {
+          width: 370px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(md-up) {
+    .contact-us-col {
+      &.left {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 53%;
+        -ms-flex: 0 0 53%;
+        flex: 0 0 53%;
+
+        max-width: 53%;
+      }
+
+      &.right {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 47%;
+        -ms-flex: 0 0 47%;
+        flex: 0 0 47%;
+
+        max-width: 47%;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .section-contact-us {
+      margin-bottom: 37px;
+
+      .inline-inputs {
+        display: block;
+      }
+
+      .custom-input {
+        width: 100%;
+      }
+    }
+
+    .contact-us-content {
+      height: 780px;
+    }
+
+    .contact-us-col {
+      &.left {
+        .col-wrapper,
+        .thankyou-wrapper {
+          width: 355px;
+        }
+      }
+
+      &.right {
+        .col-wrapper {
+          width: 310px;
+        }
+      }
+
+      .btn-contact {
+        bottom: -100px;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .section-contact-us {
+      margin-bottom: 0;
+
+      .inline-inputs {
+        display: block;
+      }
+
+      .custom-input {
+        width: 100%;
+      }
+    }
+
+    .contact-us-content {
+      height: inherit;
+    }
+
+    .contact-us-col {
+      padding: 31px 0 84px;
+
+      &.left {
+        .col-wrapper,
+        .thankyou-wrapper {
+          width: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      &.right {
+        .col-wrapper {
+          width: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      .btn-contact {
+        bottom: -64px;
+      }
+    }
+  }
+
+  @include respond-to(xs) {
+    .section-contact-us {
+      .breadcrumb {
+        padding-top: 26px;
+
+        //temporary while waiting for the globalized responsive
+        display: flex;
+        justify-content: center;
+      }
+
+      .contact-heading {
+        margin-bottom: 3px;
+      }
+
+      .custom-input {
+        margin-bottom: 14px;
+      }
+    }
+
+    .contact-us-content {
+      padding: 0;
+    }
+
+    .contact-us-col {
+      padding: 18px 0 21px;
+
+      .btn-contact {
+        position: relative;
+        bottom: 0;
+
+        width: 100%;
+        margin-top: 8px;
+      }
+
+      &.left {
+        .col-wrapper {
+          .contact-subheading {
+            margin-bottom: 24px;
+            padding-bottom: 6px;
+          }
+        }
+
+        .thankyou-wrapper {
+          // @include flexbox()
+          // @include justify-content(center)
+
+          height: 253px;
+        }
+
+        .thankyou-content {
+          position: relative;
+          top: calc(50% - 33px);
+
+          width: 100%;
+
+          text-align: center;
+        }
+      }
+    }
+
+    .contact-info-wrapper {
+      margin-bottom: 41px;
+
+      &::before {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.direction-ltr {
+  .contact-us {
+    .contact-info-wrapper {
+      &::before {
+        left: 0;
+      }
+
+      &.email {
+        p {
+          padding-top: 12px;
+        }
+      }
+    }
+
+    .contact-info-content {
+      padding-left: 36px;
+    }
+
+    .contact-us-col {
+      .btn-contact {
+        left: 0;
+      }
+    }
+
+    @include respond-to(sm) {
+      .contact-us-col {
+        .btn-contact {
+          left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.direction-rtl {
+  .contact-us {
+    .contact-info-wrapper {
+      &::before {
+        right: 0;
+      }
+    }
+
+    .contact-info-content {
+      padding-right: 36px;
+    }
+
+    .contact-us-col {
+      .col-wrapper {
+        text-align: right;
+      }
+
+      .btn-contact {
+        right: 0;
+      }
+    }
+
+    @include respond-to(sm) {
+      .contact-us-col {
+        .btn-contact {
+          right: 15px;
+        }
+      }
+    }
+  }
+}

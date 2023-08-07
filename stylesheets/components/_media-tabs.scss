@@ -1,0 +1,304 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------------------
+// This file contains all styles related to the tabs banner component.
+// Note: This will reset the CSS of "custom-tabs.scss"
+// -----------------------------------------------------------------------------------------
+
+.media-tabs {
+  padding-top: 40px;
+  padding-bottom: 40px ;
+
+  .nav-tabs {
+    margin-bottom: 30px;
+
+    border-bottom: none;
+
+    @include justify-content(center);
+
+    .nav-item {
+      padding: 0;
+      margin-right: 50px;
+      margin-bottom: 0;
+
+      .nav-link {
+        width: 140px;
+
+        font-family: $font-avenir-heavy;
+        font-size: 15px;
+        color: $tarawera-grey;
+        text-align: center;
+
+        border: none;
+        border-radius: 0;
+
+        background-color: $catskill-white;
+
+        &.active {
+          color: #fff;
+          background-color: $french-pass-blue;
+        }
+
+        @include on-event() {
+          color: #fff;
+          background-color: $french-pass-blue;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:before {
+        content: '';
+      }
+    }
+  }
+
+  .tab-select-outer {
+    position: relative;
+    display: none;
+
+    select {
+      padding: 6px 12px;
+      width: 100%;
+      height: 44px;
+
+      border: 1px solid $tarawera-grey;
+      background-color: transparent;
+
+      font-family: $font-avenir-heavy;
+      font-size: 15px;
+      color: $tarawera-grey;
+
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      -webkit-focus-ring-color: none;
+      outline: none;
+    }
+
+    /*
+      Remove select dropdown icon on MS Internet Explorer
+      SASS Ampersand doesn't work it this case. Thus,
+      we need to set the pseudo-elements directly to the
+      element.
+    */
+    select::-ms-expand {
+      display: none;
+    }
+
+    .fa {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+
+      font-size: 21px;
+
+      pointer-events: none;
+    }
+  }
+
+  .media-tabs-content {
+    .content-holder {
+      .tab-content {
+        .media-content {
+          .media-grid {
+            .media-item {
+              .media-wrap {
+                margin-bottom: 55px;
+
+                cursor: pointer;
+
+                .image-wrap {
+                  position: relative;
+                  margin-bottom: 30px;
+                  overflow: hidden;
+
+                  border-radius: 15px;
+
+                  .image-overlay {
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+
+                    background-color: rgba(47, 60, 63, 0.53);
+
+                    @include transition(all 0.3s ease-in-out);
+
+                    .overlay-element {
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                    }
+
+                    &.video-overlay {
+                      opacity: 1;
+                    }
+                  }
+
+                  .media-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+
+                  @include on-event() {
+                    .image-overlay {
+                      opacity: 1;
+
+                      @include transition(all 0.3s ease-in-out);
+                    }
+                  }
+                }
+
+                .text-wrap {
+                  h3 {
+                    margin-bottom: 0;
+
+                    font-family: $font-avenir-heavy;
+                    font-size: 15px;
+                    color: $tarawera-grey;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.direction-rtl {
+  .media-tabs {
+    .nav-tabs {
+      .nav-item {
+        padding-right: 0;
+        margin-right: 0;
+        margin-left: 50px;
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .tab-select-outer {
+      .fa {
+        left: 12px;
+        right: auto;
+      }
+    }
+
+    .media-tabs-content {
+      .content-holder {
+        .tab-content {
+          .media-content {
+            .media-grid {
+              .media-item {
+                .media-wrap {
+                  .text-wrap {
+                    text-align: right;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(sm-down) {
+  .media-tabs {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .nav-tabs {
+      display: none;
+    }
+
+    .tab-select-outer {
+      display: block;
+    }
+
+    .media-tabs-content {
+      .content-holder {
+        .tab-content {
+          .media-content {
+            .media-grid {
+              .media-item {
+                .media-wrap {
+                  margin-left: auto;
+                  margin-right: auto;
+                  margin-bottom: 20px;
+                  max-width: 320px;
+
+                  .image-wrap {
+                    margin-bottom: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(md) {
+  .media-tabs {
+    .media-tabs-content {
+      .content-holder {
+        .tab-content {
+          .media-content {
+            .media-grid {
+              .media-item {
+                .media-wrap {
+                  margin-bottom: 30px;
+
+                  .image-wrap {
+                    margin-bottom: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .media-tabs {
+    .media-tabs-content {
+      .content-holder {
+        .tab-content {
+          .media-content {
+            .media-grid {
+              .media-item {
+                .media-wrap {
+                  margin-bottom: 45px;
+
+                  .image-wrap {
+                    margin-bottom: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

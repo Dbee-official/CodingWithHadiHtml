@@ -1,0 +1,198 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the order shipping and payment component.
+// -----------------------------------------------------------------------------
+.shipping-payment {
+  .holder-row {
+    .billing-address,
+    .shipping-address {
+      width: 85%;
+
+      text-align: center;
+
+      .border-bottom {
+        margin-bottom: 2rem;
+      }
+
+      .or {
+        font-size: 14px;
+        font-family: $font-avenir-heavy;
+      }
+
+      .btn-dark-blue {
+        padding: 15px 0;
+        width: 100%;
+      }
+    }
+
+    .shipping-address {
+      margin: auto;
+    }
+
+    .shipping-payment-title {
+      margin-bottom: 1.2rem;
+
+      text-align: center;
+      font-size: 13px;
+      font-family: $font-avenir-heavy;
+    }
+
+    .custom-input {
+      margin-bottom: 18px;
+      padding: 16px 10px;
+
+      width: 100%;
+
+      color: $gray;
+      border: 1px solid $gainsboro;
+
+      @include placeholder() {
+        color: $gray;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      height: 114px;
+      padding: 13px 11px;
+
+      font-family: $font-avenir-medium;
+      font-size: 13px;
+
+      background-color: white;
+      border: 1px solid $gainsboro-grey;
+
+      resize: none;
+
+      @include on-event() {
+        outline: none;
+      }
+
+      @include placeholder() {
+        color: $matterhorn-grey;
+      }
+    }
+
+    .inline-inputs {
+      position: relative;
+
+      .select-label {
+        display: none;
+        position: absolute;
+        top: 8px;
+
+        font-size: 11px;
+        color: $gray;
+      }
+    }
+
+    .instruction {
+      font-size: 13px;
+      color: $gray;
+    }
+
+    .instruction-checkbox {
+      label {
+        font-size: 13px;
+      }
+
+      .custom-checkbox + label:before {
+        border: 1px solid $gainsboro;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1440px){
+    .holder-row {
+      .custom-input {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1366px){
+    .holder-row {
+      .custom-input {
+        padding: 16px 33px 16px 11px;
+      }
+    }
+  }
+
+  @include respond-to("md-down") {
+    .holder-row {
+      .billing-address,
+      .shipping-address {
+        margin: auto;
+
+        width: 70%;
+      }
+
+      .shipping-payment-title {
+        margin-top: 33px;
+      }
+
+      .select-wrapper {
+        width: 100%;
+      }
+    }
+  }
+
+  @include respond-to("xs") {
+    .holder-row {
+      .billing-address,
+      .shipping-address {
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .holder-address {
+      .select-input { font-size: 11px; }
+    }
+  }
+}
+
+.direction-ltr {
+  .shipping-payment {
+
+    .select-label {
+      left: 11px;
+    }
+
+    .billing-select-label {
+      left: 10px;
+    }
+
+    .instruction {
+      text-align: left;
+    }
+
+    .instruction-checkbox {
+      text-align: left;
+    }
+  }
+}
+
+.direction-rtl {
+  .shipping-payment {
+
+    .select-label {
+      right: 10px;
+    }
+
+    .billing-select-label {
+      right: 10px;
+    }
+
+    .instruction {
+      text-align: right;
+    }
+
+    .instruction-checkbox {
+      text-align: right;
+
+    }
+  }
+}

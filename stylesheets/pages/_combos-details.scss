@@ -1,0 +1,100 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the combos details page.
+// -----------------------------------------------------------------------------
+
+.combos-details {
+  .section-banner-product .swiper-holder {
+    padding-top: 98px;
+    max-width: 650px;
+
+    .gallery-thumbs {
+      margin: 24px 0 -39px;
+
+      .swiper-slide {
+        padding: 0;
+
+        &.selected {
+          border-color: $spray;
+        }
+
+        img {
+          width: auto;
+          height: 100%;
+          max-width: none;
+          max-height: none;
+        }
+      }
+    }
+
+    .gallery-top .swiper-slide {
+      height: 435px;
+    }
+  }
+
+  .section-more-products {
+    margin-top: 38px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @include respond-to(md-down) {
+    .section-banner-product .swiper-holder {
+      padding-top: 150px;
+      margin: auto;
+      max-width: 525px;
+    }
+
+    .section-banner-product .swiper-holder .gallery-top .swiper-slide {
+      height: 400px;
+    }
+
+    .section-banner-product .swiper-holder .gallery-thumbs {
+      margin: 20px 0 0;
+    }
+
+    .section-more-products {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .section-banner-product .swiper-holder {
+      max-width: 240px;
+    }
+
+    .section-banner-product .swiper-holder .gallery-top .swiper-slide {
+      height: 220px;
+    }
+
+    .swiper-holder-thumbs .gallery-thumbs .gallery-thumb-btn-prev {
+      left: 0;
+    }
+
+    .swiper-holder-thumbs .gallery-thumbs .gallery-thumb-btn-next {
+      right: 0;
+    }
+
+    .swiper-holder-thumbs .gallery-thumbs .gallery-thumb-btn-prev:before,
+    .swiper-holder-thumbs .gallery-thumbs .gallery-thumb-btn-next:after {
+      width: 35px;
+    }
+
+    .swiper-holder-thumbs .gallery-thumbs .gallery-thumb-btn-prev:before {
+      top: -25px;
+      left: -5px;
+
+      height: 70px;
+    }
+
+    .swiper-holder-thumbs .gallery-thumbs .gallery-thumb-btn-next:after {
+      top: -21px;
+      right: -5px;
+
+      height: 70px;
+    }
+  }
+}

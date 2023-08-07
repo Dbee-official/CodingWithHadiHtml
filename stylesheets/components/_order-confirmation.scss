@@ -1,0 +1,692 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the order confirmation component.
+// -----------------------------------------------------------------------------
+
+.receipt .order-confirmation {
+  padding: 0 128px;
+  margin: auto;
+
+  .holder-print {
+    margin-top: 3px;
+
+    text-align: right;
+
+    a {
+      margin-right: 10px;
+
+      font: normal 12.5px $font-avenir-heavy;
+      color: $tarawera-grey;
+      text-decoration: none;
+
+      &:hover {
+        color: $french-pass-blue;
+      }
+    }
+
+    img {
+      margin: -6px 6px 0 0;
+    }
+  }
+
+  .holder-details {
+    margin-top: 8px;
+
+    border: 1px solid $gray-border;
+  }
+
+  .order-number {
+    position: relative;
+
+    @include flexbox;
+    @include align-items(center);
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 35px 30px;
+
+    img {
+      max-width: 100%;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      text-align: right;
+    }
+
+    li {
+      padding: 0;
+      margin: 0;
+
+      font: normal 13px $font-avenir-roman;
+      letter-spacing: 0.19px;
+      line-height: 21px;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &.unpaid {
+      &:before {
+        content: '';
+
+        position: absolute;
+
+        top: 25px;
+        left: 325px;
+
+        width: 157px;
+        height: 100px;
+
+        background: url('../assets/images/image-unpaid.png') no-repeat center;
+        background-size: contain;
+
+        display: block;
+      }
+    }
+  }
+
+  .order-details {
+    margin-top: 6px;
+
+    border-top: 3px solid $tarawera-grey;
+
+    .row {
+      padding: 0 10px;
+      margin: 0 auto;
+    }
+
+    .item {
+      padding: 0 30px;
+
+      h3 {
+        padding: 41px 0 10px 2px;
+        margin: 0;
+
+        font: normal 13px $font-avenir-heavy;
+        color: $cello-blue;
+
+        border-bottom: 1px solid $gray-border;
+      }
+
+      ul {
+        padding: 0;
+        margin: 15px 0 0;
+      }
+
+      li {
+        padding: 0;
+        margin: 0 0 6px;
+
+        font-size: 13px;
+        line-height: 18px;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .order-item {
+    margin-top: 28px;
+
+    .heading {
+      padding: 0 40px;
+      margin: auto auto 16px;
+
+      ul {
+        padding: 0;
+        margin: 0;
+
+        @include flexbox;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+
+      li {
+        padding: 0 0 0 1px;
+        margin: 0;
+        max-width: 100%;
+
+        font-size: 14px;
+        color: $nobel-grey;
+
+        &:before {
+          display: none;
+        }
+
+        &:nth-child(1) {
+        @include flex(0 0 11%);
+        }
+
+        &:nth-child(2) {
+          @include flex(0 0 29%);
+        }
+
+        &:nth-child(3) {
+          @include flex(0 0 22%);
+        }
+
+        &:nth-child(4) {
+          @include flex(0 0 22%);
+          padding-left: 1%;
+        }
+
+        &:nth-child(5) {
+          @include flex(0 0 16%);
+          padding-right: 3.9%;
+
+          text-align: right;
+        }
+      }
+    }
+
+    .holder-item {
+      padding: 0 37px;
+
+      &:not(:last-child) {
+        margin-bottom: 17px;
+      }
+
+      p {
+        margin: 0;
+
+        font: normal 14px $font-avenir-black;
+        color: $dark-grey;
+      }
+
+      .holder {
+        @include flexbox;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        @include align-items(center);
+        padding: 20px 0;
+
+        border: 1px solid $gray-border;
+      }
+
+      .holder-image {
+        @include flexbox;
+        @include flex(0 0 11%);
+        padding-left: 3.1%;
+        height: 100px;
+
+        .holder-image-inner {
+          position: relative;
+
+          display: inline-block;
+          margin: auto;
+          width: 79.8px;
+          height: 100px;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+
+          display: inline;
+          margin: auto auto;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      .holder-text {
+        @include flexbox;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        @include flex(1%);
+      }
+
+      .holder-title {
+        padding-left: 3.4%;
+        @include flex(0 0 29%);
+
+        p {
+          max-width: 200px;
+
+          line-height: 1.2;
+        }
+      }
+
+      .holder-quantity {
+        @include flex(0 0 22%);
+
+        input {
+          width: 32px;
+          height: 32px;
+
+          font: normal 12px $font-avenir-black;
+          text-align: center;
+
+          background: #fff;
+          border: 1px solid $light-grey;
+        }
+      }
+
+      .holder-amount {
+        @include flex(0 0 16%);
+        padding-right: 4.5%;
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+
+        text-align: right;
+      }
+
+      .holder-price {
+        @include flex(0 0 22%);
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+      }
+    }
+  }
+
+  .order-breakdown {
+    @include flexbox;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-right: 37px;
+
+    .holder-breakdown {
+      margin: 22px 0 50px;
+      width: 35%;
+      max-width: 100%;
+    }
+
+    .holder-breakdown > div {
+      position: relative;
+
+      padding: 17.5px 0;
+
+      border-right: 1px solid $gray-border;
+      border-left: 1px solid $gray-border;
+
+      &:not(:last-child):after {
+        content: '';
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        margin: auto;
+        width: calc(100% - 40px);
+
+        border-bottom: 1px solid $gray-border;
+      }
+
+      &:first-child {
+        border-top: 1px solid $gray-border;
+      }
+
+      &:nth-last-child(2):after {
+        display: none;
+      }
+
+      &:last-child {
+        background-color: $purple-light;
+        border: 1px solid $purple-light;
+      }
+    }
+
+    p {
+      padding: 0 20px;
+      margin: 0;
+
+      font: normal 14.5px $font-avenir-heavy;
+      color: $dark-grey;
+
+      &:last-child {
+        font: normal 16.5px $font-avenir-black;
+      }
+    }
+  }
+
+  @include respond-to(lg-down) {
+    padding: 0 40px;
+
+    .order-breakdown .holder-breakdown {
+      width: 40%;
+    }
+
+    .order-item .holder-item .holder-amount {
+      @include flex(0 0 21%);
+    }
+
+    .order-item .holder-item .holder-price {
+      @include flex(0 0 17%);
+    }
+  }
+
+  @include respond-to(md-down) {
+    .order-number .holder-image {
+      max-width: 200px;
+    }
+
+    .order-number.unpaid:before {
+      top: 18px;
+      left: 255px;
+      width: 145px;
+    }
+
+    .order-item .holder-item .holder-image .holder-image-inner {
+      width: 70px;
+      height: 60px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    padding: 0;
+
+    .order-number {
+      display: block;
+      padding: 15px 12px;
+
+      .holder-image {
+        margin-left: 1px;
+        max-width: 137px;
+      }
+
+      ul {
+        margin: 13px 0 0 -1px;
+
+        text-align: left;
+      }
+
+      li {
+        font-size: 13.3px;
+        letter-spacing: 1px;
+        line-height: 22px;
+      }
+
+      &.unpaid:before {
+        top: 37px;
+        right: 25px;
+        left: initial;
+
+        width: 114px;
+      }
+    }
+
+    .order-details .item {
+      padding: 0 5px;
+
+      h3 {
+        padding: 20px 0 9px 2px;
+
+        letter-spacing: -0.1px;
+      }
+
+      ul {
+        padding-left: 4px;
+        margin: 16px 0 0;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .order-breakdown {
+      @include justify-content(start);
+      padding: 0 10px;
+
+      .holder-breakdown {
+        margin-bottom: 17px;
+        width: 100%;
+      }
+
+      p {
+        padding: 0 22px;
+
+        &:last-child {
+          padding-right: 35px;
+        }
+      }
+    }
+
+    .order-item .holder-item {
+      padding: 0 10px;
+
+      .holder-image {
+        @include flex(0 0 26.5%);
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+        padding: 0;
+        margin: 0 3%;
+
+        .holder-image-inner {
+          height: 100px;
+        }
+      }
+
+      .holder-text {
+        display: block;
+        padding: 5px 0;
+      }
+
+      .holder-title {
+        @include flex(1);
+        padding-left: 0;
+
+        p {
+          max-width: initial;
+        }
+      }
+
+      .holder-quantity {
+        position: relative;
+
+        padding: 12px 0 18px;
+
+        &:before {
+          content: 'Quantity';
+
+          position: relative;
+          top: 0;
+          left: 0;
+
+          display: inline-block;
+          width: 40%;
+
+          font: normal 14px $font-avenir-medium;
+          color: $mid-grey;
+        }
+
+        input {
+          position: relative;
+
+          top: 3px;
+
+          width: 33px;
+        }
+      }
+
+      .holder-amount {
+        position: relative;
+
+        display: inline-block;
+        padding-right: 0;
+        width: 40%;
+
+        text-align: left;
+
+        &:before {
+          content: 'Amount';
+
+          position: relative;
+          top: 0;
+          left: 0;
+
+          display: block;
+
+          font: normal 14px $font-avenir-medium;
+          color: $mid-grey;
+        }
+
+        p {
+          margin-top: 4px;
+        }
+      }
+
+      .holder-price {
+        position: relative;
+
+        display: inline-block;
+
+        &:before {
+          content: 'Price';
+
+          position: relative;
+          top: 0;
+          left: 0;
+
+          display: block;
+
+          font: normal 14px $font-avenir-medium;
+          color: $mid-grey;
+        }
+
+        p {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}
+
+.direction-rtl .receipt .order-confirmation {
+  .holder-print {
+    text-align: left
+  }
+
+  .order-number ul li {
+    text-align: left;
+  }
+
+  .order-number.unpaid:before {
+    right: 325px;
+    left: unset;
+  }
+
+  .order-details .item h3 {
+    text-align: right;
+  }
+
+  .order-item .heading li {
+    padding: 0 1px 0 0;
+
+    &:nth-child(4) {
+      padding-left: initial;
+      padding-right: 1%;
+    }
+
+    &:nth-child(5) {
+      padding-right: initial;
+      padding-left: 3.9%;
+
+      text-align: left;
+    }
+  }
+
+  .order-item .holder-item .holder-image {
+    padding-right: 3.15%;
+    padding-left: initial;
+  }
+
+  .order-item .holder-item .holder-title {
+    padding-right: 3.4%;
+    padding-left: initial;
+
+    p {
+      text-align: right;
+    }
+  }
+
+  .order-item .holder-item .holder-quantity,
+  .order-item .holder-item .holder-price {
+    text-align: right;
+  }
+
+  .order-item .holder-item .holder-amount {
+    padding-right: initial;
+    padding-left: 4.5%;
+
+    text-align: left;
+  }
+
+  .order-breakdown {
+    padding-right: initial;
+    padding-left: 37px;
+  }
+
+  @include respond-to(md) {
+    .order-item .holder-item .holder-image {
+      height: 60px;
+    }
+  }
+
+  @include respond-to(md-down) {
+    .order-number.unpaid:before {
+      top: 18px;
+      right: 255px;
+      left: initial;
+      width: 145px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .order-number ul li {
+      text-align: right;
+    }
+
+    .order-number.unpaid:before {
+      top: 37px;
+      right: initial;
+      left: 25px;
+
+      width: 114px;
+    }
+
+    .order-item .holder-item .holder-text,
+    .order-item .holder-item .holder-amount {
+      text-align: right;
+    }
+
+    .order-item .holder-item .holder-image {
+      padding: 0;
+    }
+
+    .order-item .holder-item .holder-title {
+      padding-right: 0;
+    }
+
+    .order-item .holder-item .holder-amount {
+      padding-left: 0;
+    }
+
+    .order-breakdown {
+      padding: 0 10px;
+    }
+  }
+}

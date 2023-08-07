@@ -1,0 +1,43 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the media page.
+// ----------------------------------------------------------------------------
+
+.media-page {
+  .custom-tabs-content {
+    .content-holder {
+      .tab-content {
+        .gallery-tab {
+          .media-tabs {
+            .media-tabs-content {
+              .content-holder {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(sm-down) {
+  .media-page {
+    .custom-tabs-content {
+      .content-holder {
+        .tab-content {
+          .gallery-tab {
+            .media-tabs {
+              .media-tabs-content {
+                .content-holder {
+                  padding-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

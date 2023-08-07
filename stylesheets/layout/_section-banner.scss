@@ -1,0 +1,276 @@
+//main: ../main.scss
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section banner.
+// -----------------------------------------------------------------------------
+
+.section-banner {
+  position: relative;
+
+  .scroller-wrapper {
+    position: absolute;
+    bottom: 78px;
+    z-index: 10;
+  }
+
+  .homepage-banner-slider {
+    overflow: visible;
+
+    &.swiper-container {
+      width: 100%;
+    }
+
+    .banner-item-wrapper {
+      position: relative;
+      padding-bottom: 60px;
+      background-color: white;
+    }
+
+    .item-main-image {
+      width: 82%;
+    }
+
+    .slide-description {
+      position: absolute;
+      bottom: 0;
+
+      @include flexbox()
+      @include align-items(center)
+
+      width: 450px;
+      height: 575px;
+      padding: 0 77px;
+
+      background-image: url("../assets/images/bg-banner-detail.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 11px;
+    }
+
+    .description-content {
+      text-align: center;
+
+      .h2 {
+        margin-bottom: 33px;
+      }
+    }
+
+    .custom-swiper-bullets {
+      top: 21%;
+
+      width: auto;
+
+      .homepage-banner-bullet {
+        display: block;
+        margin-top: 33px;
+        margin-bottom: 33px;
+        background: transparent;
+
+        .bullet-number {
+          font-family: $font-avenir-heavy;
+          font-size: 13px;
+          color: $tarawera-grey;
+        }
+
+        &:not(.homepage-banner-bullet-active) {
+          width: 10px;
+          height: 10px;
+          margin-left: auto;
+          margin-right: auto;
+          border: 1.5px solid $gainsboro-grey;
+          border-radius: 50%;
+          cursor: pointer;
+
+          .bullet-number {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    .homepage-banner-slider {
+      .slide-description {
+        width: 364px;
+        height: 450px;
+        padding: 0 45px;
+      }
+
+      .description-content {
+        .h2 {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(lg) {
+    .homepage-banner-slider {
+      .slide-description {
+        width: 325px;
+        height: 385px;
+        padding: 0 45px;
+      }
+
+      .description-content {
+        .h2 {
+          margin-bottom: 21px;
+        }
+      }
+    }
+
+    .scroller-wrapper {
+      bottom: 0;
+    }
+  }
+
+  @include respond-to(md) {
+    padding-top: 25px;
+
+    // .custom-container {
+    //   padding-left: 50px; //ltr
+    // }
+
+    .homepage-banner-slider {
+      .description-content {
+        .h2 {
+          margin-bottom: 9px;
+        }
+      }
+
+      .slide-description {
+        width: 287px;
+        height: 338px;
+        padding: 0 41px;
+      }
+
+      .custom-swiper-bullets {
+        top: 0;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    padding-top: 20px;
+
+    .homepage-banner-slider {
+      .banner-item-wrapper {
+        padding-bottom: 20px;
+      }
+
+      .slide-description {
+        position: relative;
+
+        width: 100%;
+        height: 370px;
+      }
+
+      .item-main-image {
+        width: 100%;
+      }
+
+      .custom-swiper-bullets {
+        display: none;
+      }
+    }
+
+    .scroller-wrapper {
+      display: none;
+    }
+  }
+
+  @include respond-to(xs) {
+    .homepage-banner-slider {
+      .slide-description {
+        height: 330px;
+        padding: 0 48.5px;
+
+        background-size: 100% 100%;
+      }
+
+      .description-content {
+        .h2 {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}
+
+.direction-ltr {
+  .section-banner {
+    .scroller-wrapper {
+      left: 28px;
+    }
+
+    .homepage-banner-slider {
+      .slide-description {
+        right: 0;
+      }
+
+      .custom-swiper-bullets {
+        left: -54px;
+      }
+    }
+
+    @include respond-to(md) {
+      .custom-container {
+        padding-left: 50px; //ltr
+      }
+
+      .homepage-banner-slider {
+        .custom-swiper-bullets {
+          left: -32px;
+        }
+      }
+
+      .scroller-wrapper {
+        left: 9px;
+      }
+    }
+  }
+}
+
+.direction-rtl {
+  .section-banner {
+    .scroller-wrapper {
+      right: 28px;
+    }
+
+    .homepage-banner-slider {
+      .banner-item-wrapper {
+        text-align: right;
+      }
+
+      .slide-description {
+        left: 0;
+      }
+
+      .custom-swiper-bullets {
+        left: inherit;
+        right: -54px;
+      }
+    }
+
+    @include respond-to(md) {
+      .custom-container {
+        padding-right: 50px; //ltr
+      }
+
+      .homepage-banner-slider {
+        .custom-swiper-bullets {
+          right: -32px;
+        }
+      }
+
+      .scroller-wrapper {
+        right: 9px;
+      }
+    }
+  }
+}

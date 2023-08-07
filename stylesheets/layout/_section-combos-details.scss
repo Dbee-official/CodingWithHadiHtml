@@ -1,0 +1,467 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section-combos-details.
+// -----------------------------------------------------------------------------
+
+.section-combos-details {
+  margin-top: 128px;
+
+  .combos-heading {
+    h2 {
+      margin: 0;
+
+      font: normal 30px $font-avenir-black;
+      line-height: 0.95;
+      color: $licorice-grey;
+    }
+  }
+
+  .swiper-holder-thumbs {
+    margin: 31px 0 0;
+    max-width: 50%;
+
+    .swiper-container {
+      z-index: 5;
+
+      padding: 0 46px 50px 46px;
+      max-width: 100%;
+    }
+
+    .gallery-thumbs {
+      .swiper-slide {
+        @include flexbox;
+        padding: 10px;
+        width: 119px;
+        height: 119px;
+
+        background-color: $white;
+        border: 1px solid $gray-border;
+
+        cursor: pointer;
+
+        img {
+          display: block;
+          margin: auto;
+          width: auto;
+          max-width: 100%;
+          max-height: 77px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+
+        &.selected {
+          border: 1px solid $cello-blue;
+
+          &:after {
+            content: '';
+
+            position: absolute;
+            right: 0;
+            bottom: -45px;
+            left: 0;
+            z-index: 1;
+
+            margin: auto;
+            width: 0;
+            height: 0;
+
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 23px solid $white;
+
+            @include transition(all .3s linear);
+          }
+        }
+      }
+
+      .gallery-button {
+        content: '';
+
+        position: absolute;
+        top: -45px;
+        bottom: 0;
+        z-index: 10;
+
+        margin: auto;
+        width: 24px;
+        height: 24px;
+
+        line-height: 1;
+        text-align: center;
+        outline: none;
+        cursor: pointer;
+      }
+
+      .gallery-thumb-btn-next {
+        right: 5px;
+
+        &:after {
+          content: '';
+
+          position: absolute;
+          top: -60px;
+          right: -5px;
+          bottom: 0;
+          z-index: -1;
+
+          width: 45px;
+          height: 135px;
+
+          background-color: $white;
+        }
+      }
+
+      .gallery-thumb-btn-prev {
+        left: 5px;
+
+        @include transform(rotate(180deg));
+
+        &:before {
+          content: '';
+
+          position: absolute;
+          top: -60px;
+          left: -16px;
+          bottom: 0;
+          z-index: -1;
+
+          width: 45px;
+          height: 135px;
+
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  .swiper-holder-main {
+    z-index: 1;
+
+    padding-right: 0;
+    margin-top: -29px;
+    height: 570px;
+
+    .gallery-top {
+      height: 100%;
+
+      background: url('../assets/images/bg-combos-carousel.png') no-repeat center;
+      background-size: cover;
+      border-radius: 10px;
+
+      .swiper-slide {
+        @include flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+
+        img {
+          // max-width: 100%;
+          // max-height: 100%;
+          max-width: 400px;
+          max-height: 400px;
+        }
+      }
+    }
+  }
+
+  .description-holder {
+    padding: 50px 65px;
+    margin-top: -29px;
+    height: 570px;
+
+    background-color: $white-smoke;
+    border-radius: 10px;
+
+    .heading {
+      @include flexbox;
+
+      h2,
+      span {
+        font: normal 20px $font-avenir-black;
+        line-height: 38px;
+      }
+
+      h2 {
+        margin-bottom: 0;
+
+        color: $licorice-grey;
+      }
+
+      span {
+        margin-left: 10px;
+
+        color: $seagull;
+      }
+    }
+
+    .category {
+      h6 {
+        margin: 0;
+      }
+
+      span {
+        position: relative;
+
+        padding-right: 10px;
+
+        font: normal 13px $font-avenir-heavy;
+        line-height: 0.95;
+        color: $cello-blue;
+
+        &:not(:last-child) {
+          margin-right: 5px;
+
+          &:after {
+            content: '/';
+
+            position: absolute;
+            top: 3px;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .holder {
+      position: relative;
+
+      padding: 26px 0 0;
+      margin: 26px 0 0;
+
+      &:before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 365px;
+        max-width: 100%;
+
+        border-top: 1px solid $gray-border;
+      }
+
+      li {
+        position: relative;
+
+        padding-left: 30px;
+        margin-bottom: 30px;
+
+        font: normal 15px $font-avenir-medium;
+        line-height: 1.5;
+        color: $licorice-grey;
+
+        list-style-type: none;
+
+        &:before {
+          content: url('../assets/images/icon-leaf-cyan.png');
+
+          position: absolute;
+          top: 2px;
+          left: 0;
+        }
+      }
+    }
+
+    .shop-item {
+      display: inline-block;
+      margin-top: 4px;
+      width: 210px;
+
+      font-size: 12.5px;
+      text-align: center;
+      text-decoration: none;
+
+      @include on-event {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media (max-width: 1499px) {
+    .description-holder {
+      padding: 30px;
+
+      .holder li {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .description-holder {
+      margin: 0 15px;
+    }
+  }
+
+  @include respond-to(md-down) {
+    margin-top: 100px;
+
+    .swiper-holder-thumbs {
+      max-width: 100%;
+
+      .gallery-thumbs .swiper-slide {
+        width: 100px;
+        height: 100px;
+
+        &:last-child {
+          margin-right: 20px;
+        }
+
+        .gallery-button {
+          top: -55px;
+        }
+      }
+
+      .gallery-thumbs .gallery-thumb-btn-prev:before,
+      .gallery-thumbs .gallery-thumb-btn-next:after  {
+        top: -42px;
+
+        height: 110px;
+      }
+
+      .gallery-thumbs .swiper-slide.selected:after {
+        bottom: -40px;
+
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 18px solid $white;
+      }
+    }
+
+    .swiper-holder-main {
+      padding-right: 15px;
+      height: 450px;
+    }
+
+    .description-holder {
+      margin-top: 0;
+      height: auto;
+
+      .shop-item {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    margin-top: 60px;
+    overflow-x: hidden;
+
+    .custom-container {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+
+    .combos-heading h2 {
+      font-size: 18px;
+    }
+
+    .swiper-holder-thumbs {
+      margin-top: 20px;
+
+      .swiper-container {
+        padding: 0 35px 40px 35px;
+      }
+
+      .gallery-thumbs .swiper-slide {
+        width: 70px;
+        height: 70px;
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+
+        &.selected:after {
+          bottom: -25px;
+
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 13px solid $white;
+        }
+
+        img {
+          max-height: 45px;
+        }
+      }
+    }
+
+    .swiper-holder-main {
+      height: 280px;
+
+      .gallery-top {
+        border-radius: 5px;
+
+        .swiper-slide img {
+          max-width: 200px;
+          max-height: 150px;
+        }
+      }
+    }
+
+    .description-holder {
+      padding: 30px 15px;
+      height: auto;
+    }
+  }
+
+  @include respond-to(xs) {
+    .description-holder .shop-item {
+      width: 100%;
+    }
+  }
+}
+
+.direction-rtl .section-combos-details {
+  .combos-heading h2 {
+    text-align: right;
+  }
+
+  .description-holder .heading span {
+    margin-right: 10px;
+    margin-left: unset;
+  }
+
+  .category h6 {
+    @include flexbox;
+    margin-top: 5px;
+  }
+
+  .category h6>span {
+    padding-right: unset;
+    padding-left: 10px;
+
+    &:not(:last-child) {
+      margin-right: unset;
+      margin-left: 5px;
+
+      &:after {
+        right: unset;
+        left: 0;
+      }
+    }
+  }
+
+  .description-holder .holder:before {
+    right: 0;
+    left: unset;
+  }
+
+  .description-holder .holder li {
+    padding-right: 30px;
+    padding-left: unset;
+    text-align: right;
+
+    &:before {
+      right: 0;
+      left: unset;
+    }
+  }
+
+  .description-holder .shop-item {
+    display: block;
+  }
+}

@@ -1,0 +1,557 @@
+//main: ../main.scss
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+.direction-ltr {
+  direction: ltr;
+}
+
+.direction-rtl {
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+.btn,
+a {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  @include on-event {
+    outline: 0;
+    @include boxshadow(none);
+  }
+}
+/**
+ * Basic styles for input fields
+ */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-focus-ring-color: none;
+  outline: none;
+  @include on-event {
+    @include boxshadow(none);
+  }
+}
+
+//styles for navbar-toggler
+.navbar-toggler {
+  padding: 10px 0;
+  border: 0;
+  border-radius: 0;
+
+  .icon-bar {
+    display: block;
+    height: 4px;
+    width: 29px;
+    background: #000;
+    @include transition(0.5s cubic-bezier(0.65, 0.05, 0.36, 1));
+    @include boxshadow(none);
+
+    &+.icon-bar {
+      margin-top: 4px;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    .icon-bar {
+      &:first-child {
+        @include transform(rotate(225deg) translate(-6px, -5px));
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        @include transform(rotate(-225deg) translate(-6px, 6px));
+      }
+    }
+  }
+  @include on-event() {
+    outline: 0;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.lock-body {
+  position: relative;
+
+  height: 100%;
+
+  -webkit-overflow-scrolling: auto;
+}
+
+.custom-container {
+  max-width: 100%;
+  padding-left: 92px;
+  padding-right: 92px;
+
+  @include respond-to(md-down) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include respond-to(xs) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+main {
+  position: relative;
+}
+
+.overlay-on-open {
+  position: fixed;
+  z-index: 999;
+
+  width: 100%;
+  height: 100%;
+
+  transition: background-color 0.2s linear;
+
+  &.active-light {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  &.active-dark {
+    background-color: rgba(0,0,0,0.6);
+  }
+}
+
+.header-overlay {
+  transition: background-color 0.2s linear;
+
+  &.active-dark {
+    position: fixed;
+    z-index: 1310;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.6);
+  }
+}
+
+.bottom-line {
+  position: relative;
+
+  padding-bottom: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 25px);
+
+    width: 50px;
+
+    border: 1px solid $tarawera-grey;
+  }
+
+  @include respond-to(md-down) {
+    padding-bottom: 12px;
+  }
+}
+
+.chat-icon-holder {
+  position: fixed;
+  bottom: 6px;
+
+  z-index: 9999;
+
+  cursor: pointer;
+
+  img{
+      width: 65px;
+      margin: 10px;
+     -webkit-backface-visibility: hidden;
+     -ms-transform: translateZ(0); /* IE 9 */
+     -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+     transform: translateZ(0);
+  }
+
+  @include transition(all 0.3s linear)
+
+  @include on-event() {
+    transform: scale(1.25);
+
+    img{
+      -webkit-backface-visibility: hidden;
+      -ms-transform: translateZ(0); /* IE 9 */
+      -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+      transform: translateZ(0);
+    }
+  }
+
+  @include respond-to(sm-down) {
+    display: none;
+  }
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+svg {
+  width: 27px;
+  height: 27px;
+
+  .svg-blue {
+    fill: $onahau-blue;
+  }
+
+  .svg-light {
+    fill: white;
+  }
+
+  .svg-dark {
+    fill: $tarawera-grey;
+  }
+
+  .svg-blue,
+  .svg-dark,
+  .svg-light {
+    @include transition(all 0.3s linear);
+  }
+
+  .svg-dark-stroke {
+    fill: none;
+    stroke: $tarawera-grey;
+    @include transition(all 0.3s linear);
+  }
+}
+
+.custom-input {
+  width: 262px;
+  margin-bottom: 25px;
+  padding: 17px 16px;
+
+  font-family: $font-avenir-medium;
+  font-size: 13px;
+  color: $matterhorn-grey;
+
+  background-color: white;
+  border: none;
+
+  -webkit-border-radius: 0;
+
+  &.custom-select-country {
+    height: 54px;
+  }
+
+  @include on-event() {
+    outline: none;
+  }
+
+  @include placeholder() {
+    color: $matterhorn-grey;
+  }
+
+  @include respond-to(xs) {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.angle-left {
+  cursor: pointer;
+
+  &::before {
+    content: '';
+
+    display: inline-block;
+
+    width: 15px;
+    height: 15px;
+    margin-top: 0;
+    margin-left: 7px;
+    margin-right: 7px;
+
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.select-wrapper {
+  position: relative;
+
+  &::before {
+    content: '\f107';
+    position: absolute;
+    top: 12px;
+
+    font-family: 'FontAwesome';
+
+    pointer-events: none;
+  }
+
+  .select-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 0;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    @include on-event() {
+      outline: none;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.date-input {
+  width: 349px;
+
+  .date-label {
+    @include flexbox()
+    @include align-items(center)
+    @include justify-content(center)
+
+    width: 34%;
+    margin-bottom: 17px;
+
+    color: $matterhorn-grey;
+    font-family: $font-avenir-medium;
+    font-size: 13px;
+
+    background-color: white;
+    border: none;
+  }
+
+  .select-wrapper {
+    width: 22%;
+  }
+
+  .custom-input {
+    width: 100%;
+  }
+}
+
+.underlined-link {
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+main {
+  @include respond-to(md) {
+    padding-top: 117px;
+  }
+  @include respond-to(sm-down) {
+    padding-top: 66px;
+  }
+}
+
+//styles for form validation errors
+input.error,
+.validate-equalTo-blur {
+  border: 1px solid $regent-st-blue !important;
+}
+
+label.error {
+  display: none;
+}
+
+#confirmpassword-error {
+  position: absolute;
+  bottom: -5px;
+
+  display: block;
+
+  font-family: $font-avenir-heavy;
+  font-size: 12px;
+  color: $regent-st-blue;
+}
+
+.custom-checkbox {
+  position: absolute;
+  opacity: 0;
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  & + label:before {
+    content: '';
+    display: inline-block;
+    vertical-align: text-top;
+    width: 17px;
+    height: 17px;
+    background: #fff;
+    border: 1px solid #cecece
+  }
+
+  &:checked + label:before {
+    background: $onahau-blue;
+  }
+
+  &:disabled + label {
+    color: $gray;
+    cursor: auto;
+  }
+
+  &:disabled + label:before {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.81);
+    border: 1px solid #dadada;
+  }
+
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow:
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  position: relative;
+
+  &:after {
+    content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: $seagull;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: .5s ease-in-out;
+  }
+
+  &.overlay {
+    position: relative;
+
+    &:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.direction-ltr {
+  .chat-icon-holder {
+    right: 6px;
+  }
+
+  .angle-left {
+    &::before {
+      @include transform(rotate(-135deg))
+    }
+  }
+
+  .select-wrapper {
+    &::before {
+      right: 13px;
+    }
+  }
+
+  #confirmpassword-error {
+    right: 0;
+  }
+
+  .custom-checkbox {
+    & + label:before {
+      margin-right: 8px;
+    }
+
+    &:checked + label:before {
+      background: $onahau-blue;
+    }
+
+    &:checked + label:after {
+      left: 4px;
+    }
+  }
+}
+
+.direction-rtl {
+  .chat-icon-holder {
+    left: 6px;
+  }
+
+  .angle-left {
+    &::before {
+      @include transform(rotate(-315deg))
+    }
+  }
+
+  .select-wrapper {
+    &::before {
+      left: 13px;
+    }
+  }
+
+  #confirmpassword-error {
+    left: 0;
+  }
+
+  .custom-checkbox {
+    & + label:before {
+      margin-left: 8px;
+    }
+
+    &:checked + label:before {
+      background: $onahau-blue;
+    }
+
+    &:checked + label:after {
+      right: 11px;
+    }
+  }
+}

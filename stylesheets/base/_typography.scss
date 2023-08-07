@@ -1,0 +1,187 @@
+//main: ../main.scss
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font: normal 125% / 1.4 $text-font-stack;
+}
+
+.h2 {
+  font-family: $font-avenir-heavy;
+  font-size: 32px;
+  color: $tarawera-grey;
+
+  @include respond-to(lg) {
+    font-size: 22px;
+  }
+
+  @include respond-to(md) {
+    font-size: 19px;
+  }
+
+  @include respond-to(xs) {
+    font-size: 18px;
+  }
+}
+
+.h3 {
+  font-family: $font-avenir-black;
+  font-size: 25px;
+  color: $tarawera-grey;
+
+  @include respond-to(lg) {
+    font-size: 18px;
+  }
+
+  @include respond-to(md) {
+    font-size: 19px;
+  }
+
+  @include respond-to(xs) {
+    font-size: 18px;
+  }
+}
+
+.h4 {
+  font-family: $font-avenir-black;
+  font-size: 49px;
+  color: white;
+  letter-spacing: 2px;
+
+  @include respond-to(md-down) {
+    font-size: 18px;
+  }
+}
+
+.h5 {
+  font-family: $font-avenir-black;
+  font-size: 18px;
+  color: $tarawera-grey;
+}
+
+.h6 {
+  font-family: $font-avenir-medium;
+  font-size: 13px;
+}
+
+.contact-heading {
+  font-family: $font-avenir-black;
+  font-size: 30px;
+  color: $tarawera-grey;
+
+  @include respond-to(xs) {
+    font-size: 22px;
+  }
+}
+
+.contact-subheading {
+  font-family: $font-avenir-medium;
+  font-size: 16px;
+  color: $regent-st-blue;
+
+  @include respond-to(xs) {
+    font-size: 14px;
+  }
+}
+
+.subheading {
+  font-family: $font-avenir-heavy;
+  font-size: 16px;
+  line-height: 21px;
+  color: $tarawera-grey;
+
+  @include respond-to(lg) {
+    font-size: 13px;
+  }
+
+  @include respond-to(md) {
+    font-size: 14px;
+  }
+
+  @include respond-to(xs) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.sub-title {
+  margin-bottom: 36px;
+
+  font-family: $font-avenir-medium;
+  font-size: 19px;
+  color: white;
+  letter-spacing: 1px;
+
+  @include respond-to(md-down) {
+    margin-bottom: 12px;
+
+    font-size: 13px;
+  }
+}
+
+.price {
+  font-family: $font-avenir-black;
+  font-size: 30px;
+  color: $tarawera-grey;
+
+  @include respond-to(lg) {
+    font-size: 25px;
+  }
+
+  @include respond-to(md) {
+    font-size: 21px;
+  }
+
+  @include respond-to(xs) {
+    font-size: 19px;
+  }
+}
+
+.regular-text {
+  font-family: $font-avenir-heavy;
+  font-size: 16px;
+
+  @include respond-to(lg) {
+    font-size: 14px;
+  }
+
+  @include respond-to(md) {
+    font-size: 15px;
+  }
+
+  @include respond-to(md) {
+    font-size: 14px;
+  }
+}
+
+.thankyou-text {
+  font-family: $font-avenir-medium;
+  font-size: 22px;
+  color: white;
+}
+
+.sub-text {
+  font-family: $font-avenir-roman;
+  font-size: 14.5px;
+  color: white;
+}
+
+.white-text {
+  color: white;
+}
+
+.small-text {
+  font-family: $font-avenir-roman;
+  font-size: 12px;
+  color: $tarawera-grey;
+}
+
+.disclaimer-text {
+  font-family: $font-avenir-roman;
+  font-size: 14px;
+  color: $tarawera-grey;
+  letter-spacing: .5px;
+  line-height: 24px;
+}

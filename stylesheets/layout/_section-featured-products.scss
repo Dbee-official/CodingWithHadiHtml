@@ -1,0 +1,479 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section featured products.
+// -----------------------------------------------------------------------------
+
+.section-featured-products {
+  background-color: $whisper-white;
+
+  .custom-container {
+    padding-top: 61px;
+    padding-bottom: 61px;
+  }
+
+  .heading {
+    margin-bottom: 28px;
+  }
+
+  .slider-wrapper {
+    padding: 40px 20px;
+    margin-bottom: 25px;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 9px #d7d7d7;
+
+    overflow: hidden;
+  }
+
+  .more-products {
+    position: relative;
+
+    font-family: $font-avenir-heavy;
+    font-size: 13px;
+    color: $french-pass-blue;
+    text-align: center;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    @include transition(all .3s linear);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -7px;
+      left: calc(50% - 75px);
+
+      width: 150px;
+
+      border: .5px solid;
+    }
+
+    @include on-event() {
+      color: $tarawera-grey;
+      text-decoration: none;
+    }
+  }
+
+  @include respond-to(md) {
+    .custom-container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .slider-wrapper {
+      margin-bottom: 5px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .custom-container {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .heading {
+      margin-bottom: 20px;
+    }
+
+    .slider-wrapper {
+      padding: 20px 15px;
+    }
+  }
+
+  @include respond-to(xs) {
+    .custom-container {
+      padding-bottom: 5px;
+    }
+
+    .slider-wrapper {
+      margin-left: -15px;
+      margin-right: -15px;
+
+      border-radius: 0;
+    }
+  }
+}
+
+.featured-products-slider {
+  overflow-x: hidden;
+
+  .featured-products-slider-item {
+    text-align: center;
+
+    .img-wrapper {
+      @include flexbox()
+      @include align-items(center)
+      @include justify-content(center)
+
+      height: 350px;
+    }
+  }
+
+  .featured-product-link {
+    position: relative;
+
+    display: inline-block;
+
+    color: $tarawera-grey;
+
+    @include on-event() {
+      text-decoration: none;
+    }
+  }
+
+  .featured-product-holder {
+    position: relative;
+
+    display: inline-block;
+  }
+
+  .featured-product-badge {
+    position: absolute;
+    top: 34px;
+
+    width: 45px;
+    height: 45px;
+
+    font-family: $font-avenir-demi;
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+
+    border-radius: 50%;
+
+    &.sale {
+      background-color: $french-pass-blue;
+    }
+
+    &.new {
+      background-color: $licorice-grey;
+    }
+  }
+
+  .featured-product-name {
+    width: 200px;
+    margin: 0 auto 10px;
+
+    font-family: $font-avenir-heavy;
+    font-size: 16px;
+  }
+
+  .featured-product-price {
+    font-family: $font-avenir-black;
+    font-size: 20px;
+
+    .old-price {
+
+      font-size: 14px;
+      color: $ghost-grey;
+      text-decoration: line-through;
+    }
+  }
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .featured-product-link,
+    .featured-product-holder {
+      width: 100%;
+    }
+
+    .featured-product-holder {
+      position: relative;
+
+      height: 150px;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1499px) {
+    .featured-product-holder {
+      .img-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .featured-products-slider-item {
+      .img-wrapper {
+        height: 280px;
+      }
+
+      .img-fluid {
+        max-width: 75%;
+      }
+    }
+
+    .featured-product-badge {
+      width: 35px;
+      height: 35px;
+    }
+
+    .featured-product-name {
+      width: 100%;
+      margin: 0 auto;
+
+      font-size: 14px;
+    }
+
+    .featured-product-price {
+      font-size: 17px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .swiper-wrapper {
+      margin: auto;
+    }
+
+    .featured-products-slider-item {
+      .img-wrapper {
+        height: 212px;
+      }
+    }
+
+    .featured-product-holder {
+      .img-fluid {
+        max-width: 65%;
+      }
+    }
+
+    .featured-product-badge {
+      // top: -6px;
+
+      width: 30px;
+      height: 30px;
+
+      font-size: 11px;
+    }
+
+    .featured-product-name {
+      width: 135px;
+
+      font-size: 12px;
+    }
+
+    .featured-product-price {
+      font-size: 16px;
+
+      .old-price {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.featured-offers {
+  @include flexbox()
+  @include justify-content(space-between)
+
+  margin-top: 88px;
+
+  .featured-offers-item {
+    @include flexbox()
+    @include align-items(center)
+
+    width: 32.5%;
+    height: 239px;
+    padding: 0 35px;
+
+    border-radius: 10px;
+    box-shadow: 0 0 9px #d7d7d7;
+  }
+
+  .new-arrivals {
+    @include justify-content(space-between)
+
+    background-color: white;
+  }
+
+  .combo {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background-image: url('../assets/images/bg-offer-1.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .offer-details-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .special-offers {
+    position: relative;
+
+    background-image: url('../assets/images/bg-offer-2.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .discount-offer-wrapper {
+    position: absolute;
+    top: 42px;
+
+    @include flexbox()
+    @include align-items(center)
+    @include justify-content(center)
+
+    width: 88px;
+    height: 88px;
+
+    background-color: $french-pass-blue;
+    border-radius: 50%;
+
+    .discount-offer {
+      margin-bottom: 0;
+
+      font-family: $font-avenir-black;
+      font-size: 25px;
+      color: white;
+    }
+  }
+
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    .discount-offer-wrapper {
+      width: 68px;
+      height: 68px;
+
+      .discount-offer {
+        font-size: 22px;
+      }
+    }
+  }
+
+  @include respond-to(lg) {
+    .featured-offers-item {
+      height: 210px;
+
+      padding: 0 15px;
+    }
+
+    .discount-offer-wrapper {
+      top: 30px;
+
+      width: 60px;
+      height: 60px;
+
+      .discount-offer {
+        font-size: 17px;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    margin-top: 30px;
+
+    .featured-offers-item {
+      height: 190px;
+      padding: 0 10px;
+    }
+
+    .discount-offer-wrapper {
+      display: none;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    display: block;
+
+    margin-top: 42px;
+
+    .featured-offers-item {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .discount-offer-wrapper {
+      display: none;
+    }
+  }
+
+  @include respond-to(xs) {
+    .featured-offers-item {
+      padding: 0 15px;
+    }
+
+    .offer-details-wrapper {
+      width: 65%;
+    }
+
+    .special-offers {
+      .offer-details-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.direction-ltr {
+  .featured-products-slider {
+    .featured-product-badge {
+      right: 0;
+    }
+
+    .featured-product-price {
+      .old-price {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .featured-offers {
+    .discount-offer-wrapper {
+      right: 25px;
+    }
+  }
+}
+
+.direction-rtl {
+  .featured-products-slider {
+    .featured-product-badge {
+      left: 0;
+    }
+
+    .featured-product-price {
+      .old-price {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .featured-offers {
+    .discount-offer-wrapper {
+      left: 25px;
+    }
+
+    .offer-details-wrapper {
+      text-align: right;
+    }
+
+    .combo {
+      &::before {
+        @include transform(scaleX(-1))
+      }
+    }
+  }
+}

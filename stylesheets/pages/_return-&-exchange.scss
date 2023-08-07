@@ -1,0 +1,129 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the return and exchange page.
+// -----------------------------------------------------------------------------
+.return-and-exchange {
+  .return-heading {
+    font-family: $font-avenir-black;
+    font-size: 30px;
+
+    color: white;
+    text-align: center;
+  }
+
+  .subheading {
+    font-family: $font-avenir-black;
+  }
+
+  .return-text {
+    font-family: $font-avenir-roman;
+    font-size: 15.5px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .breadcrumb {
+    @include flexbox()
+    @include justify-content(center)
+
+    a,
+    .breadcrumb-item {
+      color: white;
+    }
+
+    .breadcrumb-item {
+      &::before {
+        color: white;
+      }
+    }
+  }
+
+  .section-return {
+    margin-bottom: 70px;
+    padding: 65px 0;
+
+    background-image: url('../assets/images/bg-return.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .return-content-wrapper {
+      @include flexbox()
+      @include justify-content(center)
+
+      margin-top: 31px;
+    }
+
+    .return-content {
+      width: 840px;
+      padding: 40px 108px;
+
+      background-color: white;
+
+      .return-text {
+        &:nth-child(2) {
+          margin-bottom: 60px;
+        }
+      }
+
+      .bottom-line {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+
+
+        &::before {
+          left: calc(50% - 19px);
+
+          width: 38px;
+
+          border: .5px solid #293b45;
+        }
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .section-return {
+      margin-bottom: 37px;
+    }
+  }
+
+  @include respond-to(sm) {
+    .section-return {
+      margin-bottom: 0;
+
+      .return-content {
+        padding: 40px 30px;
+      }
+    }
+  }
+
+  @include respond-to(xs) {
+    .return-heading {
+      font-size: 18px;
+    }
+
+    .subheading {
+      font-size: 16px;
+    }
+
+    .section-return {
+      margin-bottom: 0;
+      padding: 29px 0;
+
+      .return-content-wrapper {
+        margin-top: 34px;
+      }
+
+      .return-content {
+        padding: 40px 8px 0;
+
+        .return-text {
+          &:nth-child(2) {
+            margin-bottom: 38px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,307 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section-product-details.
+// -----------------------------------------------------------------------------
+
+.section-product-details {
+  padding-top: 122px;
+
+  .row {
+    height: 569px;
+  }
+
+  .swiper-holder {
+    padding-right: 0;
+    height: 100%;
+
+    .swiper-container {
+      height: 100%;
+
+      background-color: $black;
+      border-radius: 10px;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background-color: rgba(0,0,0,.7);
+      z-index: 1;
+    }
+
+    iframe {
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide-active {
+      position: relative;
+
+      // &:before {
+      //   content: '';
+      //
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   left: 0;
+      //   z-index: 9;
+      //
+      //   margin: auto;
+      //   width: 100%;
+      //   height: 100%;
+      //
+      //   background: transparent;
+      //
+      //   cursor: pointer;
+      //
+      //   @include transition(all 1s ease-in-out);
+      // }
+      //
+      // &:after {
+      //   content: '\f04b';
+      //
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   left: 0;
+      //   z-index: 10;
+      //
+      //   margin: auto;
+      //   width: 120px;
+      //   height: 120px;
+      //
+      //   font: normal 50px 'FontAwesome';
+      //   line-height: 120px;
+      //   color: $white;
+      //   text-align: center;
+      //
+      //   background: $echo-blue;
+      //   border-radius: 50%;
+      //
+      //   cursor: pointer;
+      //   @include transition(all 1s ease-in-out);
+      // }
+
+      &.hide-button {
+        &:before,
+        &:after {
+          z-index: -10;
+
+          opacity: 0;
+        }
+      }
+
+      &.temporary-overlay {
+        &:before {
+          content: '';
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 100%;
+
+          background: $black;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      bottom: 30px;
+
+      text-align: center;
+
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+
+      .swiper-pagination-bullet {
+        padding: 3px;
+        margin: 0 8px;
+        width: 5px;
+        height: 5px;
+
+        font-size: 0;
+        line-height: 1.8;
+        color: $white;
+
+        background: none;
+        border: 2px solid $white;
+        outline: none;
+        opacity: 0.6;
+
+        &.swiper-pagination-bullet-active {
+          padding: 5px;
+          width: 40px;
+          height: 40px;
+
+          font-size: 14px;
+
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .description-holder {
+    padding: 55px 65px;
+
+    background-color: $white-smoke;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 1499px) {
+    .description-holder {
+      padding: 50px 55px;
+
+      .tabs-bordered {
+        @include justify-content(space-between);
+        -ms-flex-pack: justify;
+      }
+    }
+
+    .swiper-holder .swiper-slide-active:after {
+      width: 100px;
+      height: 100px;
+
+      font: normal 44px 'FontAwesome';
+      line-height: 104px;
+
+      display: none;
+    }
+  }
+
+  @include respond-to(lg) {
+    .description-holder {
+      padding: 30px;
+    }
+  }
+
+  @include respond-to(md-down) {
+    .row {
+      height: auto;
+    }
+
+    .custom-container {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .swiper-holder {
+      padding-right: 15px;
+      height: 380px;
+    }
+
+    .description-holder {
+      border-radius: 0;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    padding-top: 53px;
+    overflow-x: hidden;
+
+    .custom-container {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+
+    .description-holder {
+      padding: 0 15px;
+    }
+
+    .swiper-holder {
+      height: 300px;
+
+      .swiper-pagination .swiper-pagination-bullet {
+        padding: 2px;
+        margin: 0 3px;
+
+        border: 1px solid $white;
+
+        &.swiper-pagination-bullet-active {
+          padding: 0 3.5px;
+          width: 17px;
+          height: 17px;
+
+          font-size: 8px;
+          text-align: center;
+        }
+      }
+
+      .swiper-slide-active:after {
+        width: 75px;
+        height: 75px;
+
+        font: normal 32px 'FontAwesome';
+        line-height: 78px;
+      }
+
+      .swiper-pagination {
+        bottom: 15px;
+      }
+
+      .swiper-container {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  @include respond-to(xs) {
+    .swiper-holder {
+      height: 261px;
+
+      .swiper-pagination {
+        bottom: 10px;
+      }
+    }
+  }
+}
+
+.direction-rtl .section-product-details {
+  .swiper-holder {
+    padding-right: 15px;
+    padding-left: 0;
+  }
+
+  .description-holder .tabs-bordered {
+    padding-right: 0;
+  }
+
+  @include respond-to(md-down) {
+    .swiper-holder {
+      padding-right: 15px;
+      padding-left: 15px;
+      height: 380px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    .swiper-holder {
+      height: 300px;
+    }
+  }
+
+  @include respond-to(xs) {
+    .swiper-holder {
+      height: 261px;
+
+      .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        padding: 0 2px;
+      }
+    }
+  }
+}

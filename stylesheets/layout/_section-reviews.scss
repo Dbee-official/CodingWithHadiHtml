@@ -1,0 +1,365 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section reviews.
+// -----------------------------------------------------------------------------
+
+.section-reviews {
+  margin-top: 57px;
+
+  h2 {
+    font: normal 25px $font-avenir-black;
+    color: $licorice-grey;
+  }
+
+  .review-rating {
+    margin: 15px 0 23px;
+
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+
+    p {
+      margin: 0;
+
+      font: normal 12.5px $font-avenir-heavy;
+      color: $licorice-grey;
+
+      &:last-of-type {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+      }
+    }
+
+    .ratings {
+      padding: 0 25px;
+      margin: 0 25px;
+
+      line-height: 12px;
+
+      border-right: 1px solid $gray-border;
+      border-left: 1px solid $gray-border;
+
+      img {
+        &:not(:last-child) {
+          margin-right: 1.5px;
+        }
+      }
+    }
+  }
+
+  .write-review {
+    &.triggered {
+      color: $white;
+
+      background-color: $tarawera-grey;
+
+      pointer-events: none;
+    }
+  }
+
+  .btn-dark-blue,
+  .btn-header-sidebar {
+    display: inline-block;
+    padding: 11px 36.8px;
+    width: auto;
+    height: auto;
+
+    font-size: 12.7px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .reviews {
+    margin-top: 51px;
+
+    .reviews-item {
+      padding: 45px 30px;
+      margin-bottom: 5px;
+
+      @include flexbox;
+      @include justify-content(between);
+      @include align-items(center);
+
+      background-color: $white-smoke;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .reviews-details {
+      min-width: 195px;
+
+      h4 {
+        padding-left: 3px;
+        margin-bottom: 0;
+
+        font: bold 15.5px $font-avenir-roman;
+        letter-spacing: 0.6px;
+        color: $licorice-grey;
+      }
+    }
+
+    .reviews-ratings {
+      margin-top: 7px;
+
+      line-height: 14px;
+
+      img {
+        &:not(:last-child) {
+          margin-right: 1.5px;
+        }
+      }
+    }
+
+    .reviews-description {
+      @include flexbox;
+      p {
+        padding: 0 45px;
+        margin-bottom: 0;
+
+        font: normal 14px $font-avenir-roman;
+        line-height: 1.8;
+        letter-spacing: 0.16px;
+        color: $licorice-grey;
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  .add-review {
+    padding: 50px 25px;
+    margin-top: 65px;
+
+    background-color: $white-smoke;
+
+    h3 {
+      margin: 0;
+
+      font: normal 13.7px $font-avenir-black;
+      color: $licorice-grey;
+    }
+
+    .review-message {
+      margin: 20px 0 24px;
+      padding: 15px 12px;
+
+      width: 100%;
+      height: 120px;
+
+      font: normal 13px $font-avenir-roman;
+      line-height: 1.5;
+      color: $licorice-grey;
+
+      border: 1.5px solid $white-smoke;
+      -webkit-appearance: none;
+
+      resize: none;
+
+      @include placeholder {
+        font-size: 13px;
+        color: $light-gray;
+      }
+
+      @include transition(0.35s cubic-bezier(0.65, 0.05, 0.36, 1));
+
+      &:focus {
+        border-color: $licorice-grey;
+
+        outline: none;
+      }
+    }
+
+    .review-ratings-holder {
+      position: relative;
+
+      margin: 13px 0 22px;
+
+      line-height: 16px;
+
+      .rating-count {
+        margin: 0 4px 0 0;
+
+        cursor: pointer;
+      }
+
+      .rating-input {
+        display: none;
+      }
+
+      .rating-error-message {
+        position: absolute;
+        bottom: -3px;
+        left: 125px;
+
+        margin-left: 7px;
+
+        font: normal 13px $font-avenir-roman;
+        color: $bright-red;
+      }
+    }
+
+    .cancel-review {
+      position: relative;
+      top: -1px;
+
+      margin-left: 8px;
+    }
+
+    ._btn {
+      width: 156px;
+      height: 44px;
+
+      text-align: center;
+    }
+  }
+
+  @include respond-to(md-down) {
+    .reviews .reviews-item {
+      padding: 30px 25px;
+
+      .reviews-details {
+        min-width: 170px;
+      }
+
+      .reviews-description p {
+        padding: 0 15px;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    .review-heading {
+      border-top: 1px solid $gray-border;
+    }
+
+    h2 {
+      margin-top: 13px;
+
+      font-size: 18px;
+    }
+
+    .add-review {
+      padding: 30px 25px;
+      margin-top: 30px;
+
+      .review-message {
+        margin: 10px 0 15px;
+        padding: 15px 10px;
+      }
+
+      .review-ratings-holder {
+        margin: 5px 0 20px;
+      }
+    }
+  }
+
+  @include respond-to(xs) {
+    .custom-container {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    .review-rating {
+      display: block;
+      margin: 0 0 15px;
+
+      .ratings {
+        margin-top: 10px;
+
+        border: none;
+      }
+
+      p {
+        display: inline-block;
+
+        &:last-of-type {
+          -webkit-box-ordinal-group: unset;
+          -ms-flex-order: unset;
+          order: unset;
+        }
+      }
+    }
+
+    .write-review {
+      display: block;
+    }
+
+    .reviews {
+      margin-top: 33px;
+
+      .reviews-item {
+        display: block;
+        margin-bottom: 17px;
+        padding: 15px 7px;
+
+        .reviews-description p {
+          padding: 20px 2px 0;
+
+          letter-spacing: 0.15px;
+        }
+      }
+
+      .reviews-ratings {
+        margin-top: 2px;
+      }
+
+      .reviews-details h4 {
+        padding: 0;
+      }
+    }
+
+    .add-review {
+      padding: 15px 8px;
+
+      ._btn {
+        padding: 11px;
+        width: calc(100% - 53%);
+      }
+
+      .cancel-review {
+        position: unset;
+        top: unset;
+
+        float: right;
+        margin-left: unset;
+      }
+    }
+  }
+}
+
+.direction-rtl .section-reviews {
+  .reviews {
+    text-align: right;
+  }
+
+  .add-review {
+    text-align: right;
+
+    .review-ratings-holder .rating-error-message {
+      right: 130px;
+      left: unset;
+    }
+  }
+
+  @include respond-to(xs) {
+    .add-review .cancel-review {
+      float: left;
+    }
+  }
+}

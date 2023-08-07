@@ -1,0 +1,73 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the forms component.
+// -----------------------------------------------------------------------------
+
+.product-listing-checkbox {
+  position: absolute;
+  opacity: 0;
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    font-family: $font-avenir-heavy;
+  }
+
+  & + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: $whisper-white;
+    border-radius: 50%;
+    font-size: 14px;
+  }
+
+  &:hover + label:before { background: $regent-st-blue; }
+
+  &:focus + label:before { box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }
+
+  &:checked + label:before { background: $regent-st-blue; }
+
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    box-shadow:
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+
+.skin-type-checkbox,
+.age-range-checkbox {
+  @extend .product-listing-checkbox;
+}
+
+.direction-rtl {
+  .list-unstyled { padding-right: 0; }
+
+  .product-listing-checkbox {
+    & + label:before {
+      content: '';
+      margin-left: 10px;
+    }
+
+    &:checked + label:after  { right: 23px; }
+  }
+}

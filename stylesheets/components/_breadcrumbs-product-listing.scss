@@ -1,0 +1,20 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the breadcrumb component.
+// -----------------------------------------------------------------------------
+
+.product-listing-breadcrumbs {
+
+  .breadcrumb {
+    padding: 0;
+    background-color: transparent;
+
+    .breadcrumb-item,
+    a {
+      font-size: 12px;
+      font-weight: bold;
+      color: $tarawera-grey;
+    }
+  }
+}

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="assets/images/favicon.ico">
+  <title>Coding - Product Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.3/hamburgers.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.min.css">  <link rel="stylesheet" type="text/css" href="stylesheets/cust.css">
+
+
+  <!--[if lte IE 9]>
+    <link href="stylesheets/non-responsive.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="direction-ltr">
+  <!--[if lt IE 9]>
+    <div id="browser-notification" class="alert alert-danger">
+      <div class="container">
+        We are sorry but it looks like your <a href="http://www.whatbrowser.org/intl/en_us/" target=_blank>browser</a> doesn't support our website features. In order to get the full experience please download a new version of <a title="Download Chrome" href="http://www.google.com/chrome/" target=_blank>Chrome</a>, <a title="Download Safari" href="http://www.apple.com/safari/download/" target=_blank>Safari</a>, <a title="Download Firefox" href="http://www.mozilla.com/firefox/" target=_blank>Firefox</a>, or <a title="Download Internet Explorer" href="http://www.microsoft.com/windows/internet-explorer/default.aspx" target=_blank>Internet Explorer</a>.
+      </div>
+    </div>
+  <![endif]-->
+
+  <header class="header">
+    <div class="header-toggler-wrapper">
+      <a href="javascript:void(0)" class="hamburger hamburger--collapse btn-toggler">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </a>
+    </div>
+    <div class="main-header-wrapper">
+      <div class="header-overlay"></div>
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid p-0 navbar-wrapper">
+          <a class="navbar-brand" href="01_home.html"><img class="js-navbar-brand-img img-fluid logoproject" src="assets/images/logo.png" alt=""></a>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav category-links">
+              <li class="nav-item js-with-dropdown">
+                <a class="nav-link c-nav-link" href="23_Products_Listing_eyes.html" data-category="face" data-id="face">All Courses</a>
+              </li>
+              <li class="nav-item js-with-dropdown">
+                <a class="nav-link c-nav-link" href="#" data-category="body" data-id="body">Flutter</a>
+              </li>
+              <li class="nav-item js-with-dropdown">
+                <a class="nav-link c-nav-link" href="#" data-category="hair" data-id="hair">Java</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link c-nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link c-nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav user-links">
+              <li class="nav-item dropdown login-dropdown js-login-dropdown">
+                <a href="javascript:void(0)" id="dropdownLogIn" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 113.8 102.8" enable-background="new 0 0 113.8 102.8" xml:space="preserve">
+                    <g>
+                    	<circle class="svg-dark" cx="54.8" cy="27.7" r="24.1"/>
+                    	<path class="svg-dark" d="M56.9,57.9v42.8h33.5c0,0,9-6.5,6.1-32.9c0,0-6.6-17.4-21.5-16C74.9,51.9,67.4,59.5,56.9,57.9z"/>
+                    	<path class="svg-dark" d="M56.9,57.9v42.8H23.4c0,0-9-6.5-6.1-32.9c0,0,6.6-17.4,21.5-16C38.8,51.9,46.3,59.5,56.9,57.9z"/>
+                    </g>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu log-in-menu" role="menu" aria-labelledby="dropdownLogIn" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                  <div class="row-wrapper">
+                    <p class="log-in-text">ARE YOU A MEMBER?</p>
+                    <button class="_btn btn-header-sidebar js-sidebar-toggler" data-open="signin-sidebar">SIGN IN</button>
+                  </div>
+                  <div class="row-wrapper">
+                    <p class="log-in-text">NEW CUSTOMER?</p>
+                    <button class="_btn btn-header-sidebar js-sidebar-toggler" data-open="signup-sidebar">SIGN UP</button>
+                  </div>
+                </ul>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link js-sidebar-toggler" data-open="cart-sidebar">
+                  <?xml version="1.0" encoding="utf-8"?>
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="299.7894592px" height="237.3333282px" viewBox="0 0 299.7894592 237.3333282" style="enable-background:new 0 0 299.7894592 237.3333282;" xml:space="preserve">
+                   <g>
+                     <path class="svg-light" stroke-width="8" stroke-miterlimit="10" d="M207.3543854,57.4596481C207.3543854,25.7253418,181.6290436,0,149.8947296,0
+                  	S92.4350891,25.7253418,92.4350891,57.4596481H0l14.9894733,179.8736877h266.0631714l18.7368164-179.8736877H207.3543854z
+                  	 M149.8947296,14.0526314c23.9730377,0,43.4070282,19.4339828,43.4070282,43.4070168h-86.8140411
+                  	C106.4877167,33.4866142,125.9217072,14.0526314,149.8947296,14.0526314z"/>
+                     <g>
+                       <path class=" svg-dark" d="M207.3543854,57.4596481C207.3543854,25.7253418,181.6290436,0,149.8947296,0
+                      S92.4350891,25.7253418,92.4350891,57.4596481H0l14.9894733,179.8736877h266.0631714l18.7368164-179.8736877H207.3543854z
+                       M149.8947296,14.0526314c23.9730377,0,43.4070282,19.4339828,43.4070282,43.4070168h-86.8140411
+                      C106.4877167,33.4866142,125.9217072,14.0526314,149.8947296,14.0526314z"/>
+                     </g>
+                   </g>
+                  </svg>
+
+                  <span class="cart-items">21</span>
+                </a>
+              </li> -->
+           
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="face" class="dropdown-category js-face-category">
+        <div class="category-name d-block d-md-none">
+          <span class="angle-left js-back-menu"></span>
+          <p class="category-link">All Courses</p>
+        </div>
+        <div class="container dropdown-category-wrapper">
+          <div class="row">
+            <div class="col-lg-5 d-flex">
+              <div class="dropdown-category-list-wrapper">
+                <ul class="list-unstyled dropdown-category-list">
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 3.0&Firebase Build a Grocery App&WEB Admin Panel</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Build ChatGPT App in Flutter using OpenAI API </a>
+                  </li>
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 2.2 & Firebase, build a complete app from scratch</a>
+                  </li>
+                
+                </ul>
+                <ul class="list-unstyled dropdown-category-list">
+                   <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 3.0 & Rest API from scratch, build a mini Store app</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 1.2 with Firebase&Stripe Build shop app from scratch</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 3.0 & Rest API from scratch, build a mini Store app </a>
+                  </li>
+                </ul>
+                <ul class="list-unstyled dropdown-category-list">
+                  <li class="category-item">
+                   <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 2.2 برنامج كامل للشركات باستعمال الفلاتر و فايربيز
+                  </a>
+                 </li>                
+               </ul>
+              </div>
+            </div>
+            <!-- <div class="col-lg-7">
+              <div class="col-lg">
+                <div class="nav-offer-wrapper row">
+                  <div class="nav-offer-detail offset-md-5 col-md-7">
+                    <p class="nav-offer-title">COMBO OFFER</p>
+                    <p class="subheading bottom-line">Promotions on the most beautiful natural range of the Holy Face</p>
+                    <p class="price">$ 140</p>
+                    <a href="23_Products_Listing_eyes.html"><button class="_btn btn-large btn-dark-blue" type="button" name="button" value="Shop Now">Shop Now</button></a>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div id="body" class="dropdown-category js-face-category">
+        <div class="category-name d-block d-md-none">
+          <span class="angle-left js-back-menu"></span>
+          <p class="category-link">Flutter</p>
+        </div>
+        <div class="container dropdown-category-wrapper">
+          <div class="row">
+            <div class="col-lg-5 d-flex">
+              <div class="dropdown-category-list-wrapper">
+                <ul class="list-unstyled dropdown-category-list">
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 3.0&Firebase Build a Grocery App&WEB Admin Panel</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Build ChatGPT App in Flutter using OpenAI API </a>
+                  </li>
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 2.2 & Firebase, build a complete app from scratch</a>
+                  </li>
+                
+                </ul>
+                <ul class="list-unstyled dropdown-category-list">
+                   <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 3.0 & Rest API from scratch, build a mini Store app</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="23_Products_Listing_eyes.html" class="category-link">Flutter 1.2 with Firebase&Stripe Build shop app from scratch</a>
+                  </li>
+                 
+                </ul>         
+              </div>
+          
+          </div>
+        </div>
+      </div>
+   
+    </div>
+    <div id="hair" class="dropdown-category js-face-category">
+      <div class="category-name d-block d-md-none">
+        <span class="angle-left js-back-menu"></span>
+        <p class="category-link">HAIR</p>
+      </div>
+      <div class="container dropdown-category-wrapper">
+        <div class="row">
+          <div class="col-lg-5 d-flex">
+            <div class="dropdown-category-list-wrapper">
+              <ul class="list-unstyled dropdown-category-list">
+                <li class="category-item">
+                  <a href="23_Products_Listing_eyes.html" class="category-link">Java Spring</a>
+                </li>
+                <li class="category-item">
+                  <a href="23_Products_Listing_eyes.html" class="category-link">FireBase</a> </a>
+                </li>
+                <li class="category-item">
+                  <a href="23_Products_Listing_eyes.html" class="category-link">Java 2.0</a>
+                </li>
+              
+              </ul>
+             
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    <div class="header-sidebar">
+      <div class="container">
+        <button class="close close-white js-close-sm d-block d-md-none" type="button">
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="d-flex align-items-baseline on-mobile">
+          <div class="dropdown login-dropdown js-login-dropdown">
+            <a href="javascript:void(0)" id="dropdownLogIn" class="nav-link user-icon dropdown-toggle d-flex justify-content-center align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="113.8px" height="102.8px" viewBox="0 0 113.8 102.8" enable-background="new 0 0 113.8 102.8" xml:space="preserve">
+                <g>
+                	<circle class="svg-light" cx="54.8" cy="27.7" r="24.1"/>
+                	<path class="svg-light" d="M56.9,57.9v42.8h33.5c0,0,9-6.5,6.1-32.9c0,0-6.6-17.4-21.5-16C74.9,51.9,67.4,59.5,56.9,57.9z"/>
+                	<path class="svg-light" d="M56.9,57.9v42.8H23.4c0,0-9-6.5-6.1-32.9c0,0,6.6-17.4,21.5-16C38.8,51.9,46.3,59.5,56.9,57.9z"/>
+                </g>
+              </svg>
+            </a>
+            <ul class="dropdown-menu log-in-menu d-block d-md-none" role="menu" aria-labelledby="dropdownLogIn" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+              <div class="row-wrapper">
+                <p class="log-in-text">ARE YOU A MEMBER?</p>
+                <button class="_btn btn-header-sidebar js-sidebar-toggler" data-open="signin-sidebar">SIGN IN</button>
+              </div>
+              <div class="row-wrapper">
+                <p class="log-in-text">NEW CUSTOMER?</p>
+                <button class="_btn btn-header-sidebar js-sidebar-toggler" data-open="signup-sidebar">SIGN UP</button>
+              </div>
+            </ul>
+          </div>
+
+        
+        </div>
+        <ul class="list-unstyled bottom-line">
+          <li class="header-sidebar-main-item">
+            <a href="/23_Products_Listing_eyes.html" class="header-sidebar-main-link " data-category-mobile="face">All courses</a>
+          </li>
+          <li class="header-sidebar-main-item">
+            <a href="#" class="header-sidebar-main-link " data-category-mobile="body" >Flutter</a>
+          </li>
+          <li class="header-sidebar-main-item">
+            <a href="#" class="header-sidebar-main-link " data-category-mobile="hair">Java</a>
+          </li>
+      
+        </ul>
+        <div class="row">
+          <ul class="list-unstyled col-lg header-sidebar-sub">
+            <li class="header-sidebar-sub-item">
+              <a href="01_home.html" class="header-sidebar-sub-link">About us</a>
+            </li>
+            <li class="header-sidebar-sub-item">
+              <a href="50_learning_library.html" class="header-sidebar-sub-link">Contact Us</a>
+            </li>
+            <li class="header-sidebar-sub-item">
+              <a href="52_wholesaler_section.html" class="header-sidebar-sub-link">Hadi Kachmar</a>
+            </li>
+           
+          </ul>
+          <div class="col-lg text-center">
+            <div class="btn-wrapper">
+              <button class="_btn btn-header-sidebar" type="button" name="button">LIVE CHAT</button>
+              <button class="_btn btn-header-sidebar" type="button" name="button">MESSAGE US</button>
+            </div>
+            <div class="header-sidebar-socials-wrapper">
+              <i class="icon fab fa-facebook-f"></i>
+              <i class="icon fab fa-twitter"></i>
+              <i class="icon fab fa-instagram"></i>
+              <i class="icon fas fa-share-alt"></i>
+              <i class="icon fab fa-whatsapp"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div id="signin-sidebar" class="sign-in-sidebar">
+     
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">SIGN IN</h5>
+        <form action="">
+          <input class="custom-input" type="email" placeholder="Your email address*" required>
+          <input class="custom-input mb-0" type="password" placeholder="Your password*" required>
+          <p class="small-text">* Mandatory fields</p>
+          <input class="_btn btn-dark-blue btn-sigin-sidebar" type="submit" value="SIGN IN">
+        </form>
+        <p class="small-text js-sidebar-toggler underlined-link" data-open="forgotpassword-sidebar">Forgot your password?</p>
+        <button class="_btn btn-sigin-sidebar btn-facebook">LOG IN VIA FACEBOOK</button>
+        <div class="bottom-line"></div>
+        <h5 class="h5">NEW CUSTOMER? SIGN UP.</h5>
+        <button class="_btn btn-header-sidebar btn-sigin-sidebar js-sidebar-toggler" data-open="signup-sidebar">SIGN UP</button>
+      </div>
+    </div>
+    <div id="signup-sidebar" class="sign-in-sidebar">
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">SIGN UP</h5>
+        <form action="">
+          <input class="custom-input" type="text" placeholder="First name*" required>
+          <input class="custom-input" type="text" placeholder="Last name*" required>
+          <div class="d-flex date-input">
+            <label class="date-label">Date of Birth*</label>
+            <div class="select-wrapper">
+              <select class="custom-input select-input" name="" required>
+                <option value="0">DD</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+            <div class="select-wrapper">
+              <select class="custom-input select-input" name="" required>
+                <option value="0">MM</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+            </div>
+            <div class="select-wrapper">
+              <select class="custom-input select-input" name="" required>
+                <option value="0">YYYY</option>
+                <option value="2018">2012</option>
+                <option value="2018">2013</option>
+                <option value="2018">2014</option>
+                <option value="2018">2015</option>
+                <option value="2018">2016</option>
+                <option value="2018">2017</option>
+                <option value="2018">2018</option>
+              </select>
+            </div>
+          </div>
+          <div class="select-wrapper">
+            <select class="custom-input select-input" name="" required>
+              <option value="0">Country of residence*</option>
+              <option value="lorem ipsum">Lorem Ipsum</option>
+            </select>
+          </div>
+          <input class="custom-input" type="email" placeholder="Email Address*" required>
+          <input class="custom-input" type="password" placeholder="Your password*" required>
+          <input class="custom-input mb-0" type="password" placeholder="Confirm password*" required>
+          <p class="small-text">* Mandatory fields</p>
+          <input class="_btn btn-dark-blue btn-sigin-sidebar" type="submit" value="SIGN UP">
+          <p class="small-text">By signing up, you agree to our <span class="js-sidebar-toggler underlined-link" data-open="disclaimer-sidebar">Disclaimer</span>.</p>
+        </form>
+
+      </div>
+    </div>
+    <div id="disclaimer-sidebar" class="sign-in-sidebar disclaimer-sidebar">
+      <button class="close close-white sidebar-close d-none d-md-block" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5"><span class="angle-left js-sidebar-toggler" data-open="signup-sidebar"></span>DISCLAIMER</h5>
+        <p class="disclaimer-text">Lorem ipsum dolor sit amet, sea no utamur forensibus, pri dicit voluptatum ei. Molestie democritum adversarium vis id. Euismod accumsan intellegam ut sed, his at agam assentior. Vel platonem gubergren id, eos tation fabulas commune id, ne malis
+          causae tamquam mea.</p>
+        <p class="disclaimer-text">Nec ei vidisse sapientem intellegam. Minim facilisis duo cu, cu duo noluisse officiis. Id sed viris sanctus necessitatibus. Te vix wisi dicant possit, et pro vidisse lobortis, in eum novum complectitur.</p>
+        <p class="disclaimer-text">Per ex meliore urbanitas, quo vero dicant in, id eligendi iracundia vix. Vis ex ullum comprehensam, ea nemore alterum theophrastus duo. Ad solum dicta laboramus quo, his cu putant apeirian. Ea facilisis iracundia democritum mei, et mea eros dicit
+          incorrupte. Eam et legere iuvaret adversarium. Usu ei regione convenire. Et suas falli prompta mea, cu sea vidisse iudicabit.</p>
+      </div>
+    </div>
+    <div id="forgotpassword-sidebar" class="sign-in-sidebar">
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">FORGOT PASSWORD</h5>
+        <p class="disclaimer-text">Enter your email and we'll send you an email with a link to reset your password</p>
+        <form action="">
+          <input class="custom-input mb-0" type="email" placeholder="Your email address*" required>
+          <p class="small-text">* Mandatory fields</p>
+          <input class="_btn btn-dark-blue btn-sigin-sidebar js-sidebar-toggler" type="submit" value="SUBMIT" data-open="thankyou-sidebar">
+        </form>
+      </div>
+    </div>
+    <div id="thankyou-sidebar" class="thankyou-sidebar sign-in-sidebar">
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">THANK YOU</h5>
+        <img class="mb-4" src="assets/images/icon-check.png" alt="">
+        <p class="disclaimer-text">You will shortly receive an email from us with a link to reset your password.</p>
+      </div>
+    </div>
+    <div id="resetpassword-sidebar" class="sign-in-sidebar">
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">RESET PASSWORD</h5>
+        <form action="">
+          <input class="custom-input" type="password" placeholder="New password*" required>
+          <input class="custom-input mb-0" type="password" placeholder="Confirm new password*" required>
+          <p class="small-text">* Mandatory fields</p>
+          <input class="_btn btn-dark-blue btn-sigin-sidebar" type="submit" value="SUBMIT">
+        </form>
+      </div>
+    </div>
+   
+
+
+  </header>
+
+  <!-- This is just a toggler remove later -->
+  <button class="btn _btn btn-primary direction-toggler" type="button" name="button" style="cursor: pointer; position: fixed; top: 200px; left:0; z-index: 999;">toggle</button>
+
+  <main class="product-details">
+    <div class="chat-icon-holder">
+      <img src="assets/images/icon-chat-big.png" alt="chat" class="chat-icon">
+    </div>
+
+    <div class="breadcrumb-product-detail">
+      <div class="container custom-container">
+        <div class="breadcrumb-title">
+          <a href="#">Flutter</a>
+        </div>
+        <div class="breadcrumb">
+          <a class="breadcrumb-item" href="#">Home</a>
+          <a class="breadcrumb-item" href="#">Face</a>
+          <a class="breadcrumb-item" href="#">All Categories</a>
+          <a class="breadcrumb-item active" href="#">Flutter 3.0&Firebase Build a Grocery App&WEB Admin Panel</a>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div class="section-product-details">
+    <div class="container custom-container">
+      <div class="row">
+        <div class="col-lg-6 swiper-holder">
+          <div class="swiper-container">
+            <div class="swiper-wrapper ">
+              <div class="swiper-slide">
+                <!-- <iframe width="100" height="315" src="http://127.0.0.1:5500/assets/video/2- Connect our app to the Firebase.mp4" frameborder="0" allowfullscreen></iframe> -->
+             
+                <video id="custom-video" width="100%"  controls>
+                  <!-- Replace "VIDEO_URL" with the actual URL of your video file -->
+                  <source src="http://127.0.0.1:5500/assets/video/2- Connect our app to the Firebase.mp4" type="video/mp4">
+              </video>
+              <script>
+                // Disable video download through right-click context menu
+                document.getElementById('custom-video').addEventListener('contextmenu', function(event) {
+                    event.preventDefault();
+                });
+            </script>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/image-media1.png" alt="" />
+              </div>
+             
+            
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+          </div>
+        </div>
+        <div class="col-lg-6 description-holder custom-tabs">
+          <div class="tab-holder">
+            <ul class="nav nav-tabs tabs-bordered">
+              <li class="nav-item tabs-bordered-item">
+                <a class="nav-link tabs-bordered-link active" data-toggle="tab" href="#description">Files</a>
+              </li>
+              <li class="nav-item tabs-bordered-item">
+                <a class="nav-link tabs-bordered-link" data-toggle="tab" href="#ingredients">Code</a>
+              </li>
+              <!-- <li class="nav-item tabs-bordered-item">
+                <a class="nav-link tabs-bordered-link" data-toggle="tab" href="#howtouse">HOW TO USE</a>
+              </li> -->
+            </ul>
+          </div>
+          <div class="content-holder">
+            <div class="tab-content">
+              <div id="description" class="tab-pane fade show active">
+                <ul class="holder">
+                  <li>
+                    <span><img src="http://127.0.0.1:5500/assets/images/download-file-icon.png"></span>
+                   <a href="http://127.0.0.1:5500/assets/files/cart_final.zip" download>Cart_final.zip</a>
+                  </li>
+                  <li>
+                    <span><img src="http://127.0.0.1:5500/assets/images/download-file-icon.png"></span>
+                    <a href="http://127.0.0.1:5500/assets/files/skins-20230730T104242Z-001.zip" download>Script.zip</a>
+                  </li>
+                  <li>
+                    <span><img src="http://127.0.0.1:5500/assets/images/download-file-icon.png"></span>
+                    <a href="http://127.0.0.1:5500/assets/files/skins-20230730T104242Z-001.zip" download>Skin.zip</a>
+                  </li>
+             
+                </ul>
+              </div>
+              <div id="ingredients" class="tab-pane fade">
+                <ul class="holder">
+                  <li>
+                    <span><img src="http://127.0.0.1:5500/assets/images/download-file-icon.png"></span>
+                    <a href="http://127.0.0.1:5500/assets/files/2- Connect our app to the Firebase_player.html" download>Finalize the order and display it for the user.html</a>
+
+                  </li>
+                  <li>
+                    <span><img src="http://127.0.0.1:5500/assets/images/download-file-icon.png"></span>
+                    <a href="http://127.0.0.1:5500/assets/files/2- Connect our app to the Firebase_embed.css" download="">Finalize the order and display it for the user_embed.css</a>
+                  </li>
+                  <li>
+                    <span><img src="http://127.0.0.1:5500/assets/images/download-file-icon.png"></span>
+                    <a href="http://127.0.0.1:5500/assets/files/2- Connect our app to the Firebase_embed.css" download="">Finalize the order and display it for the user_embed.xml</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="howtouse" class="tab-pane fade">
+                <ul class="holder">
+                  <li>
+                    Creamy, antioxidant and enzyme-rich
+                  </li>
+                  <li>
+                    Smells delicious as it brings deep exfoliation and sloughing effects to dry, dull skin suffering from the "winter blues"
+                  </li>
+                  <li>
+                    It is active, so a patch test is recommended.
+                  </li>
+                  <li>
+                    Suitable for dry or mature skin type
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-carousel-products">
+    <div class="container custom-container">
+      <div class="custom-tabs large">
+        <div class="tab-holder">
+          <ul class="nav nav-tabs tabs-bordered">
+            <li class="nav-item tabs-bordered-item">
+              <a class="nav-link tabs-bordered-link" data-toggle="tab" href="#you_may_like">< PREVIEW</a>
+            </li>
+            <li class="nav-item tabs-bordered-item">
+              <a class="nav-link tabs-bordered-link" data-toggle="tab" href="#similar_products">NEXT ></a>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
+    <div class="section-information d-none d-md-block">
+      <div class="container custom-container">
+        <div class="information-wrapper">
+      
+        </div>
+      </div>
+    </div>
+
+ 
+
+    <div class="section-socials d-none d-md-block">
+      <div class="container custom-container">
+        <div class="socials-wrapper">
+          <div class="socials-icon-wrapper">
+            <i class="fa fa-facebook-f socials-icon"></i>
+          </div>
+          <div class="socials-icon-wrapper">
+            <i class="fa fa-twitter socials-icon"></i>
+          </div>
+          <div class="socials-icon-wrapper">
+            <i class="fa fa-instagram socials-icon"></i>
+          </div>
+          <div class="socials-icon-wrapper">
+            <i class="fa fa-share-alt socials-icon"></i>
+          </div>
+          <div class="socials-icon-wrapper whatsapp-wrapper">
+            <i class="fa fa-whatsapp socials-icon"></i>
+            <div class="whatsapp-number-wrapper">
+              <p class="whatsapp-number">+961 1 946 568 - +961 1 946 568</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade newsletter-modal" id="newsletter" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog d-flex align-items-center justify-content-center" role="document">
+      <div class="modal-content">
+        <div class="form-content">
+          <div class="modal-header">
+            <div class="heading-wrapper">
+              <h4 class="modal-title" id="modalLabel">JOIN OUR NEWSLETTER</h4>
+              <p class="subtitle">Stay overwhelmed with our uniques offers.</p>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="newsletter-form js-newsletter-form" action="index.html" method="post">
+              <div class="input-group">
+                <input type="text" class="custom-input" placeholder="First name*">
+                <input type="text" class="custom-input" placeholder="Last name*">
+              </div>
+              <div class="input-group">
+                <input type="email" class="custom-input" placeholder="Email*">
+                <div class="select-wrapper">
+                  <select name="" id="" class="select-input custom-input">
+                    <option value="">Country of Residence*</option>
+                    <option value="">Lorem Ipsum</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </div>
+              <button type="submit" class="_btn btn-large btn-light-blue">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="thankyou-content">
+          <div class="thankyou-wrapper">
+            <p class="thankyou-text">THANK YOU</p>
+            <p class="sub-text mb-0">You've successfully joined our newsletter</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <!-- <div class="overlay-on-open"></div> -->
+    <div class="container-fluid">
+      <div class="custom-row">
+        <div class="custom-col-lg">
+          <div class="footer-links-wrapper">
+            <ul class="footer-list dark list-unstyled">
+              <li class="footer-item">
+                <a href="23_Products_Listing_eyes.html" class="footer-link">All Courses</a>
+              </li>
+              <li class="footer-item">
+                <a href="23_Products_Listing_eyes.html" class="footer-link">Flutter</a>
+              </li>
+              <li class="footer-item">
+                <a href="23_Products_Listing_eyes.html" class="footer-link">Java</a>
+              </li>
+            </ul>
+            <ul class="footer-list dark list-unstyled">
+              <li class="footer-item">
+                <a href="#" class="footer-link">About us</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Contact us</a>
+              </li>
+            </ul>
+        
+            <ul class="footer-list light list-unstyled">
+              <li class="footer-item">
+                <a href="#" class="footer-link">Privacy Policy</a>
+              </li>
+              <li class="footer-item">
+                <a href="04_home_newsletter.html" class="footer-link">Terms</a>
+              </li>
+              <li class="footer-item">
+                <a href="57_contact_us.html" class="footer-link">Hadi Kachmar</a>
+              </li>
+            </ul>
+          </div>
+
+          <p class="footer-copyright">&#169; Copyright 2023. All Rights Reserved. <a href="#">DBee</a></p>
+        </div>
+        <div class="custom-col-sm">
+          <div class="need-help-wrapper text-center">
+            <img class="need-help-icon" src="assets/images/icon-talk.png" alt="">
+            <h2 class="need-help-txt">NEED HELP ?</h2>
+            <div class="btn-wrapper">
+              <div class="btn-holder">
+                <button class="_btn btn-transparent btn-footer">Live Chat</button>
+                <button class="_btn btn-transparent btn-footer">Message Us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-socials d-block d-md-none">
+          <div class="section-socials d-block d-md-none">
+            <div class="container custom-container">
+              <div class="socials-wrapper">
+                <div class="socials-icon-wrapper">
+                  <i class="fa fa-facebook socials-icon"></i>
+                </div>
+                <div class="socials-icon-wrapper">
+                  <i class="fab fa-twitter socials-icon"></i>
+                </div>
+                <div class="socials-icon-wrapper">
+                  <i class="fab fa-instagram socials-icon"></i>
+                </div>
+                <div class="socials-icon-wrapper">
+                  <i class="fas fa-share-alt socials-icon"></i>
+                </div>
+                <div class="socials-icon-wrapper whatsapp-wrapper">
+                  <i class="fab fa-whatsapp socials-icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class="whatsapp-number-mobile">
+              <p>+961 1 946 568 - +961 1 946 568</p>
+            </div>
+          </div>
+          <p class="footer-copyright">&#169; Copyright 2016. All Rights Reserved. <a href="#">Koein</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascripts/vendors/jquery.min.js"></script>
+  <script src="javascripts/vendors/tether.min.js"></script>
+  <script src="javascripts/vendors/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-scroll-lock@3/jquery-scrollLock.min.js"></script>
+  <script src="javascripts/core/base.js"></script>
+  <script src="javascripts/modules/theme-module.js"></script>
+  <script src="javascripts/bootstrapper.js"></script>
+
+  </script>
+
+  <!--[if lte IE 9]>
+        <script src="javascripts/non-responsive.js"></script>
+    <![endif]-->
+</body>
+
+</html>
+<script>
+  let items = document.querySelectorAll(".faq-main .faq-item .faq-label");
+items.forEach(function (t) {
+	t.addEventListener("click", function (e) {
+		items.forEach(function (e) {
+			e !== t || e.classList.contains("faq-item-show")
+				? e.classList.remove("faq-item-show")
+				: e.classList.add("faq-item-show");
+		});
+	});
+});
+</script>
+<style>
+  .custom-tabs .tab-content li a {
+    text-decoration: unset;
+    color: #4e89fe;}
+    .swiper-slide{
+      height: 430px;
+    }
+    
+</style>

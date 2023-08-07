@@ -1,0 +1,25 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the product details page.
+// -----------------------------------------------------------------------------
+
+.product-details {
+  .section-more-products {
+    margin-top: 38px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .section-information {
+    margin-top: 43px;
+  }
+
+  @include respond-to(md) {
+    .section-more-products {
+      margin-bottom: 50px;
+    }
+  }
+}

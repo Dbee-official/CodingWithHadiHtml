@@ -1,0 +1,266 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the custom-tabs component.
+// -----------------------------------------------------------------------------
+
+.custom-tabs {
+  &.large {
+    .tabs-bordered {
+      @include justify-content(center);
+
+      .tabs-bordered-item {
+        &:not(:last-child) {
+          margin-right: 60px;
+        }
+      }
+
+      .tabs-bordered-link {
+        padding: 0 0 14px;
+
+        font-size: 25px;
+      }
+    }
+  }
+
+  .tabs-bordered {
+    .tabs-bordered-item {
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: 100px;
+      }
+    }
+
+    .tabs-bordered-link {
+      position: relative;
+
+      padding: 0 0 9px;
+
+      font: normal 16px $font-avenir-black;
+      color: $light-gray;
+
+      background: transparent;
+      border: none;
+      border-radius: 0;
+
+      &:before {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 2px;
+
+        background-color: $licorice-grey;
+        visibility: hidden;
+
+        @include transition(all 0.3s ease-in-out);
+        @include transform(scaleX(0));
+      }
+
+      &:hover {
+        color: $licorice-grey;
+
+        @include transition(all 0.3s ease-in-out);
+
+        &:before {
+          visibility: visible;
+          @include transform(scaleX(1));
+        }
+      }
+
+      &.active {
+        color: $licorice-grey;
+
+        &:before {
+          display: none;
+        }
+
+        &:after {
+          content: '';
+
+          position: absolute;
+          bottom: 0;
+          left: 0;
+
+          width: 100%;
+
+          border-bottom: 2px solid $licorice-grey;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    .holder {
+      padding: 50px 0 0;
+      margin: 0;
+    }
+
+    li {
+      position: relative;
+
+      padding-left: 30px;
+      margin-bottom: 30px;
+
+      font: normal 15px $font-avenir-medium;
+      line-height: 1.5;
+      color: $licorice-grey;
+
+      list-style-type: none;
+
+      &:before {
+        content: url('../assets/images/icon-leaf-cyan.png');
+
+        position: absolute;
+        top: 2px;
+        left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 1499px) {
+    .tabs-bordered .tabs-bordered-item:not(:last-child) {
+      margin-right: 0;
+    }
+
+    .tabs-bordered .tabs-bordered-link {
+      font-size: 16px;
+    }
+
+    .tab-content .holder {
+      padding: 40px 0 0;
+    }
+  }
+
+  @include respond-to(lg) {
+    .tabs-bordered .tabs-bordered-link {
+      font-size: 15px;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    &.large {
+      .tab-holder {
+        padding: 27px 0 0;
+      }
+
+      .tabs-bordered {
+        width: auto;
+
+        .tabs-bordered-item {
+          width: 50%;
+
+          text-align: center;
+        }
+
+        .tabs-bordered-item:not(:last-child) {
+          margin-right: 0;
+        }
+
+        .tabs-bordered-link {
+          padding: 0 0 12px;
+
+          font-size: 12px;
+        }
+      }
+    }
+
+    .tab-holder {
+      padding: 31px 0 0;
+      overflow-x: auto;
+    }
+
+    .content-holder {
+      padding: 22px 0 27px;
+    }
+
+    .tabs-bordered {
+      .tabs-bordered-link {
+        padding: 0 0 13px;
+
+        font-size: 12px;
+      }
+    }
+
+    .tab-content li {
+      padding-left: 32px;
+      margin-bottom: 24px;
+
+      font-size: 14px;
+      letter-spacing: 0.15px;
+      line-height: 24px;
+
+      &:before {
+        top: 6px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .tab-content .holder {
+      padding: 0;
+    }
+  }
+
+  @include respond-to(xs) {
+    .tab-holder {
+      border-bottom: 1px solid $gray-border;
+    }
+
+    .tabs-bordered {
+      width: 370px;
+
+      border: none;
+    }
+  }
+}
+
+.direction-rtl .custom-tabs {
+  &.large .tabs-bordered .tabs-bordered-item:not(:last-child) {
+    margin-right: unset;
+    margin-left: 60px;
+  }
+
+  .tabs-bordered .tabs-bordered-item:not(:last-child) {
+    margin-right: unset;
+    margin-left: 100px;
+  }
+
+  .tab-content li {
+    padding-right: 30px;
+    padding-left: unset;
+
+    text-align: right;
+
+    &:before {
+      right: 0;
+      left: unset;
+    }
+  }
+
+  @media (max-width: 1499px) {
+    .tabs-bordered .tabs-bordered-item:not(:last-child) {
+      margin-left: 0;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    &.large .tab-holder {
+      padding: 27px 0 0;
+    }
+
+    &.large .tabs-bordered {
+      padding: 0;
+    }
+
+    &.large .tabs-bordered .tabs-bordered-item:not(:last-child) {
+      margin-left: 0;
+    }
+  }
+}

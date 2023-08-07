@@ -1,0 +1,86 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the breadcrumb of the site/application.
+// -----------------------------------------------------------------------------
+
+.breadcrumb-product-detail {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 10;
+
+  width: auto;
+
+  .breadcrumb {
+    padding: 0;
+    margin: 0 0 0 41px;
+
+    background: transparent;
+  }
+
+  .breadcrumb-title {
+    display: none;
+
+    text-align: center;
+
+    a {
+      font: normal 18px $font-avenir-black;
+      color: $cello-blue;
+      text-decoration: none;
+    }
+  }
+
+  .breadcrumb-item {
+    font: normal 12px $font-avenir-roman;
+    color: $cello-blue;
+
+    &:before {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+
+    &.active {
+      pointer-events: none;
+    }
+  }
+
+  @include respond-to(md-down) {
+    top: 65px;
+
+    width: 100%;
+
+    .breadcrumb-title {
+      display: block;
+    }
+
+    .breadcrumb {
+      @include justify-content(center);
+      margin: 3px auto 0;
+    }
+  }
+
+  @include respond-to(sm-down) {
+    top: 121px;
+
+    .breadcrumb-item {
+      font-size: 11.1px;
+      font-weight: bold;
+    }
+  }
+}
+
+.direction-rtl .breadcrumb-product-detail {
+  right: 0;
+  left: unset;
+
+  .breadcrumb {
+    margin: 0 41px 0 0;
+  }
+
+  @include respond-to(md-down) {
+    .breadcrumb {
+      margin: 3px auto 0;
+    }
+  }
+}

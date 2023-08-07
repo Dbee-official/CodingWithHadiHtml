@@ -1,0 +1,69 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the 404 page.
+// -----------------------------------------------------------------------------
+
+.page-404-wrapper {
+  @include flexbox()
+  @include flex-direction(column)
+
+  height: 100vh;
+}
+
+.page-404 {
+  @include flex(1)
+  @include flexbox()
+  @include align-items(center)
+
+  background-image: url('../assets/images/bg-return.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .container-fluid {
+    @include flexbox()
+    @include justify-content(center)
+  }
+
+  .section-wrapper {
+    text-align: center;
+  }
+
+  .heading-404 {
+    margin-bottom: 20px;
+
+    font-family: $font-avenir-black;
+    font-size: 60px;
+  }
+
+  .subheading-404 {
+    margin-bottom: 65px;
+
+    font-family: $font-avenir-black;
+    font-size: 31px;
+  }
+
+  .btn-404 {
+    padding: 15px 23px;
+
+    font-size: 13px;
+
+    @include on-event() {
+      text-decoration: none;
+    }
+  }
+
+  @include respond-to(xs) {
+    .heading-404 {
+      margin-bottom: 10px;
+
+      font-size: 45px;
+    }
+
+    .subheading-404 {
+      margin-bottom: 35px;
+
+      font-size: 21px;
+    }
+  }
+}

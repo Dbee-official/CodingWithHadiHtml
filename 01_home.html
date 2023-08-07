@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="assets/images/favicon.png">
+
+  <title>Coding With Hadi</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/0.9.3/hamburgers.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.min.css">  <link rel="stylesheet" type="text/css" href="stylesheets/cust.css">
+
+  <!--[if lte IE 9]>
+    <link href="stylesheets/non-responsive.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="direction-ltr">
+  <!--[if lt IE 9]>
+    <div id="browser-notification" class="alert alert-danger">
+      <div class="container">
+        We are sorry but it looks like your <a href="http://www.whatbrowser.org/intl/en_us/" target=_blank>browser</a> doesn't support our website features. In order to get the full experience please download a new version of <a title="Download Chrome" href="http://www.google.com/chrome/" target=_blank>Chrome</a>, <a title="Download Safari" href="http://www.apple.com/safari/download/" target=_blank>Safari</a>, <a title="Download Firefox" href="http://www.mozilla.com/firefox/" target=_blank>Firefox</a>, or <a title="Download Internet Explorer" href="http://www.microsoft.com/windows/internet-explorer/default.aspx" target=_blank>Internet Explorer</a>.
+      </div>
+    </div>
+  <![endif]-->
+
+  <header class="header">
+    <div class="header-toggler-wrapper">
+      <a href="javascript:void(0)" class="hamburger hamburger--collapse btn-toggler">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </a>
+    </div>
+    <div class="main-header-wrapper">
+      <div class="header-overlay"></div>
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid p-0 navbar-wrapper">
+          <a class="navbar-brand" href="01_home.html"><img class="js-navbar-brand-img img-fluid logoproject" src="assets/images/logo.png" alt=""></a>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav category-links">
+              <li class="nav-item js-with-dropdown">
+                <a class="nav-link c-nav-link" href="03_Products_Listing.html" data-category="face" data-id="face">All Courses</a>
+              </li>
+              <li class="nav-item js-with-dropdown">
+                <a class="nav-link c-nav-link" href="#" data-category="body" data-id="body">Flutter</a>
+              </li>
+              <li class="nav-item js-with-dropdown">
+                <a class="nav-link c-nav-link" href="#" data-category="hair" data-id="hair">Java</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link c-nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link c-nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav user-links">
+              <li class="nav-item dropdown login-dropdown js-login-dropdown">
+                <a href="javascript:void(0)" id="dropdownLogIn" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 113.8 102.8" enable-background="new 0 0 113.8 102.8" xml:space="preserve">
+                    <g>
+                    	<circle class="svg-dark" cx="54.8" cy="27.7" r="24.1"/>
+                    	<path class="svg-dark" d="M56.9,57.9v42.8h33.5c0,0,9-6.5,6.1-32.9c0,0-6.6-17.4-21.5-16C74.9,51.9,67.4,59.5,56.9,57.9z"/>
+                    	<path class="svg-dark" d="M56.9,57.9v42.8H23.4c0,0-9-6.5-6.1-32.9c0,0,6.6-17.4,21.5-16C38.8,51.9,46.3,59.5,56.9,57.9z"/>
+                    </g>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu log-in-menu" role="menu" aria-labelledby="dropdownLogIn" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                  <div class="row-wrapper">
+                    <p class="log-in-text">ARE YOU A MEMBER?</p>
+                    <button class="_btn btn-header-sidebar js-sidebar-toggler" data-open="signin-sidebar">SIGN IN</button>
+                  </div>
+                  <div class="row-wrapper">
+                    <p class="log-in-text">NEW CUSTOMER?</p>
+                    <button class="_btn btn-header-sidebar js-sidebar-toggler" data-open="signup-sidebar">SIGN UP</button>
+                  </div>
+                </ul>
+              </li>
+          
+           
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="face" class="dropdown-category js-face-category">
+        <div class="category-name d-block d-md-none">
+          <span class="angle-left js-back-menu"></span>
+          <p class="category-link">All Courses</p>
+        </div>
+        <div class="container dropdown-category-wrapper">
+          <div class="row">
+            <div class="col-lg-5 d-flex">
+              <div class="dropdown-category-list-wrapper">
+                <ul class="list-unstyled dropdown-category-list">
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 3.0&Firebase Build a Grocery App&WEB Admin Panel</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Build ChatGPT App in Flutter using OpenAI API </a>
+                  </li>
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 2.2 & Firebase, build a complete app from scratch</a>
+                  </li>
+                
+                </ul>
+                <ul class="list-unstyled dropdown-category-list">
+                   <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 3.0 & Rest API from scratch, build a mini Store app</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 1.2 with Firebase&Stripe Build shop app from scratch</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 3.0 & Rest API from scratch, build a mini Store app </a>
+                  </li>
+                </ul>
+                <ul class="list-unstyled dropdown-category-list">
+                  <li class="category-item">
+                   <a href="03_Products_Listing.html" class="category-link">Flutter 2.2 برنامج كامل للشركات باستعمال الفلاتر و فايربيز
+                  </a>
+                 </li>                
+               </ul>
+              </div>
+            </div>
+         
+          </div>
+        </div>
+      </div>
+      <div id="body" class="dropdown-category js-face-category">
+        <div class="category-name d-block d-md-none">
+          <span class="angle-left js-back-menu"></span>
+          <p class="category-link">Flutter</p>
+        </div>
+        <div class="container dropdown-category-wrapper">
+          <div class="row">
+            <div class="col-lg-5 d-flex">
+              <div class="dropdown-category-list-wrapper">
+                <ul class="list-unstyled dropdown-category-list">
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 3.0&Firebase Build a Grocery App&WEB Admin Panel</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Build ChatGPT App in Flutter using OpenAI API </a>
+                  </li>
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 2.2 & Firebase, build a complete app from scratch</a>
+                  </li>
+                
+                </ul>
+                <ul class="list-unstyled dropdown-category-list">
+                   <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 3.0 & Rest API from scratch, build a mini Store app</a>
+                  </li>
+                  <li class="category-item">
+                    <a href="03_Products_Listing.html" class="category-link">Flutter 1.2 with Firebase&Stripe Build shop app from scratch</a>
+                  </li>
+                 
+                </ul>         
+              </div>
+          
+          </div>
+        </div>
+      </div>
+   
+    </div>
+    <div class="header-sidebar">
+      <div class="container">
+        <button class="close close-white js-close-sm d-block d-md-none" type="button">
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="d-flex align-items-baseline on-mobile">
+          <div class="dropdown login-dropdown js-login-dropdown">
+            <a href="javascript:void(0)" id="dropdownLogIn" class="nav-link user-icon dropdown-toggle d-flex justify-content-center align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="113.8px" height="102.8px" viewBox="0 0 113.8 102.8" enable-background="new 0 0 113.8 102.8" xml:space="preserve">
+                <g>
+                	<circle class="svg-light" cx="54.8" cy="27.7" r="24.1"/>
+                	<path class="svg-light" d="M56.9,57.9v42.8h33.5c0,0,9-6.5,6.1-32.9c0,0-6.6-17.4-21.5-16C74.9,51.9,67.4,59.5,56.9,57.9z"/>
+                	<path class="svg-light" d="M56.9,57.9v42.8H23.4c0,0-9-6.5-6.1-32.9c0,0,6.6-17.4,21.5-16C38.8,51.9,46.3,59.5,56.9,57.9z"/>
+                </g>
+              </svg>
+            </a>
+            <ul class="dropdown-menu log-in-menu d-block d-md-none" role="menu" aria-labelledby="dropdownLogIn" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+              <div class="row-wrapper">
+                <p class="log-in-text">ARE YOU A MEMBER?</p>
+                <button class="_btn btn-header-sidebar js-sidebar-toggler" data-open="signin-sidebar">SIGN IN</button>
+              </div>
+              <div class="row-wrapper">
+                <p class="log-in-text">NEW CUSTOMER?</p>
+                <button class="_btn btn-header-sidebar js-sidebar-toggler" data-open="signup-sidebar">SIGN UP</button>
+              </div>
+            </ul>
+          </div>
+
+        
+        </div>
+        <ul class="list-unstyled bottom-line">
+          <li class="header-sidebar-main-item">
+            <a href="/03_Products_Listing.html" class="header-sidebar-sub-link">All courses</a>
+          </li>
+          <li class="header-sidebar-main-item">
+            <a href="#" class="header-sidebar-sub-link" >Flutter</a>
+          </li>
+          <li class="header-sidebar-main-item">
+            <a href="#" class="header-sidebar-sub-link" >Java</a>
+          </li>
+      
+        </ul>
+        <div class="row">
+          <ul class="list-unstyled col-lg header-sidebar-sub">
+            <li class="header-sidebar-sub-item">
+              <a href="/02_Aboutus.html" class="header-sidebar-sub-link">About us</a>
+            </li>
+            <li class="header-sidebar-sub-item">
+              <a href="/07_contact_us.html" class="header-sidebar-sub-link">Contact Us</a>
+            </li>
+            <li class="header-sidebar-sub-item">
+              <a href="https://hadikachmar3.github.io/#/" target="_blank" class="header-sidebar-sub-link">Hadi Kachmar</a>
+            </li>
+           
+          </ul>
+          <div class="col-lg text-center">
+            <div class="btn-wrapper">
+              <button class="_btn btn-header-sidebar" type="button" name="button">LIVE CHAT</button>
+              <button class="_btn btn-header-sidebar" type="button" name="button">MESSAGE US</button>
+            </div>
+            <div class="header-sidebar-socials-wrapper">
+              <i class="icon fab fa-facebook-f"></i>
+              <i class="icon fab fa-twitter"></i>
+              <i class="icon fab fa-instagram"></i>
+              <i class="icon fas fa-share-alt"></i>
+              <i class="icon fab fa-whatsapp"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div id="signin-sidebar" class="sign-in-sidebar">
+     
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">SIGN IN</h5>
+        <form action="">
+          <input class="custom-input" type="email" placeholder="Your email address*" required>
+          <input class="custom-input mb-0" type="password" placeholder="Your password*" required>
+          <p class="small-text">* Mandatory fields</p>
+          <input class="_btn btn-dark-blue btn-sigin-sidebar" type="submit" value="SIGN IN">
+        </form>
+        <p class="small-text js-sidebar-toggler underlined-link" data-open="forgotpassword-sidebar">Forgot your password?</p>
+        <button class="_btn btn-sigin-sidebar btn-facebook">LOG IN VIA FACEBOOK</button>
+        <div class="bottom-line"></div>
+        <h5 class="h5">NEW CUSTOMER? SIGN UP.</h5>
+        <button class="_btn btn-header-sidebar btn-sigin-sidebar js-sidebar-toggler" data-open="signup-sidebar">SIGN UP</button>
+      </div>
+    </div>
+    <div id="signup-sidebar" class="sign-in-sidebar">
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">SIGN UP</h5>
+        <form action="">
+          <input class="custom-input" type="text" placeholder="First name*" required>
+          <input class="custom-input" type="text" placeholder="Last name*" required>
+          <div class="d-flex date-input">
+            <label class="date-label">Date of Birth*</label>
+            <input class="custom-input" type="date" placeholder="Date of Birth*" required>
+
+          </div>
+          <div class="select-wrapper">
+            <select class="custom-input select-input" name="" required>
+              <option value="0">Country of residence*</option>
+              <option value="lorem ipsum">Lorem Ipsum</option>
+            </select>
+          </div>
+          <input class="custom-input" type="email" placeholder="Email Address*" required>
+          <input class="custom-input" type="password" placeholder="Your password*" required>
+          <input class="custom-input mb-0" type="password" placeholder="Confirm password*" required>
+          <p class="small-text">* Mandatory fields</p>
+          <input class="_btn btn-dark-blue btn-sigin-sidebar" type="submit" value="SIGN UP">
+          <p class="small-text">By signing up, you agree to our <span class="js-sidebar-toggler underlined-link" data-open="disclaimer-sidebar">Disclaimer</span>.</p>
+        </form>
+
+      </div>
+    </div>
+    <div id="disclaimer-sidebar" class="sign-in-sidebar disclaimer-sidebar">
+      <button class="close close-white sidebar-close d-none d-md-block" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5"><span class="angle-left js-sidebar-toggler" data-open="signup-sidebar"></span>DISCLAIMER</h5>
+        <p class="disclaimer-text">Lorem ipsum dolor sit amet, sea no utamur forensibus, pri dicit voluptatum ei. Molestie democritum adversarium vis id. Euismod accumsan intellegam ut sed, his at agam assentior. Vel platonem gubergren id, eos tation fabulas commune id, ne malis
+          causae tamquam mea.</p>
+        <p class="disclaimer-text">[Your Company Name] provides this service as-is and makes no warranties or representations regarding the accuracy, completeness, reliability, or suitability of the information and materials offered through this platform. The use of our service is at your own risk, and [Your Company Name] shall not be held liable for any damages or losses arising from the use of this service.
+          <br><br>
+          The content provided on this platform is for informational purposes only and should not be considered as professional advice. You should consult with a qualified expert or professional before making any decisions based on the information provided here.
+          <br><br>
+
+          [Your Company Name] does not guarantee the availability, security, or continuous operation of this service. We reserve the right to modify or discontinue the service at any time without prior notice.
+          <br><br>
+
+          By using this service, you agree not to engage in any activities that may cause harm, disruption, or damage to the platform or its users. This includes but is not limited to: attempting to gain unauthorized access to the system, distributing malicious software, or engaging in any form of illegal or unethical behavior.
+          <br><br>
+
+          You acknowledge that [Your Company Name] may collect and process personal information as described in our Privacy Policy. We will not share your personal data with third parties without your consent unless required by law.
+          <br><br>
+
+          By signing up, you confirm that you are of legal age to enter into a binding agreement and have read and understood the terms of this Disclaimer.
+          <br><br>
+
+          Please note that this is a sample Disclaimer and may need to be adjusted to fit the specific requirements of your project or website. It is essential to seek legal advice to ensure that your Disclaimer complies with relevant laws and regulations in your jurisdiction.</p>
+    </div>
+    <div id="forgotpassword-sidebar" class="sign-in-sidebar">
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">FORGOT PASSWORD</h5>
+        <p class="disclaimer-text">Enter your email and we'll send you an email with a link to reset your password</p>
+        <form action="">
+          <input class="custom-input mb-0" type="email" placeholder="Your email address*" required>
+          <p class="small-text">* Mandatory fields</p>
+          <input class="_btn btn-dark-blue btn-sigin-sidebar js-sidebar-toggler" type="submit" value="SUBMIT" data-open="thankyou-sidebar">
+        </form>
+      </div>
+    </div>
+    <div id="thankyou-sidebar" class="thankyou-sidebar sign-in-sidebar">
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">THANK YOU</h5>
+        <img class="mb-4" src="assets/images/icon-check.png" alt="">
+        <p class="disclaimer-text">You will shortly receive an email from us with a link to reset your password.</p>
+      </div>
+    </div>
+    <div id="resetpassword-sidebar" class="sign-in-sidebar">
+      <button class="close close-white center-mobile sidebar-close" type="button">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="container signin-sidebar-wrapper">
+        <h5 class="h5">RESET PASSWORD</h5>
+        <form action="">
+          <input class="custom-input" type="password" placeholder="New password*" required>
+          <input class="custom-input mb-0" type="password" placeholder="Confirm new password*" required>
+          <p class="small-text">* Mandatory fields</p>
+          <input class="_btn btn-dark-blue btn-sigin-sidebar" type="submit" value="SUBMIT">
+        </form>
+      </div>
+    </div>
+   
+  </header>
+
+  
+  <main class="home">
+    <!-- <div class="overlay-on-open"></div> -->
+    <div class="chat-icon-holder">
+      <img src="assets/images/icon-chat-big.png" alt="chat" class="chat-icon">
+    </div>
+    <div class="section-banner">
+      <div class="container custom-container">
+        <div class="homepage-banner-slider swiper-container" >
+          <div class="swiper-wrapper">
+            <div class="banner-slider-item swiper-slide">
+              <div class="banner-item-wrapper">
+                <img class="img-fluid item-main-image" src="assets/images/slideshow1.png" alt="Slider Image">
+                <div class="slide-description">
+                  <div class="description-content">
+                    <h2 class="h2 heading bottom-line">Flutter 3.0&Firebase Build a Grocery App&WEB Admin Panel</h2>
+                    <p class="subheading">Hadi kachmar</p>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span><span> (480)</span>
+                    <p class="price">$ 140</p>
+                    <button class="_btn btn-large btn-dark-blue js-sidebar-toggler" type="button" name="button" value="Shop Now" data-open="signin-sidebar">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="banner-slider-item swiper-slide">
+              <div class="banner-item-wrapper">
+                <img class="img-fluid item-main-image" src="assets/images/slideshow2.png" alt="Slider Image">
+                <div class="slide-description">
+                  <div class="description-content">
+                    <h2 class="h2 heading bottom-line">Build ChatGPT/ChatBot App in Flutter using OpenAI Rest API</h2>
+                    <p class="subheading">Hadi kachmar</p>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span><span> (700)</span>
+                    <p class="price">$ 70</p>
+
+                    <button class="_btn btn-large btn-dark-blue js-sidebar-toggler" type="button" name="button" value="Shop Now" data-open="signin-sidebar">Shop Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="banner-slider-item swiper-slide">
+              <div class="banner-item-wrapper">
+                <img class="img-fluid item-main-image" src="assets/images/slideshow4.png" alt="Slider Image">
+                <div class="slide-description">
+                  <div class="description-content">
+                    <h2 class="h2 heading bottom-line">Flutter 3.0 & Rest API from scratch, build a mini Store app</h2>
+                    <p class="subheading">Hadi kachmar</p>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span><span> (100)</span>
+                    <p class="price">$ 170</p>
+                    <button class="_btn btn-large btn-dark-blue js-sidebar-toggler" type="button" name="button" value="Shop Now" data-open="signin-sidebar">Shop Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="banner-slider-item swiper-slide">
+              <div class="banner-item-wrapper">
+                <img class="img-fluid item-main-image" src="assets/images/slideshow3.png" alt="Slider Image">
+                <div class="slide-description">
+                  <div class="description-content">
+                    <h2 class="h2 heading bottom-line">Flutter 3.0 Rest API crash course build a News app from zero</h2>
+                    <p class="subheading">Hadi kachmar</p>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span><span> (1100)</span>
+                     <p class="price">255 $</p>
+                    <button class="_btn btn-large btn-dark-blue js-sidebar-toggler" type="button" name="button" value="Shop Now" data-open="signin-sidebar">Shop Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="banner-slider-item swiper-slide">
+              <div class="banner-item-wrapper">
+                <img class="img-fluid item-main-image" src="assets/images/slideshow5.png" alt="Slider Image">
+                <div class="slide-description">
+                  <div class="description-content">
+                    <h2 class="h2 heading bottom-line">Flutter 1.2 with Firebase&Stripe Build shop app from scratch</h2>
+                    <p class="subheading">Hadi kachmar</p>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star"></span><span> (900)</span>
+                     <p class="price">140 $</p>
+                    <button class="_btn btn-large btn-dark-blue js-sidebar-toggler" type="button" name="button" value="Shop Now" data-open="signin-sidebar">Shop Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination custom-swiper-bullets"></div>
+        </div>
+        <div class="scroller-wrapper js-scroller">
+          <a href="#featured-products"><img src="assets/images/icon-slide-down.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-features">
+      <div class="container custom-container">
+        <div class="product-features-wrapper d-flex justify-content-between">
+          <div class="product-features-item">
+            <img class="product-features-image img-fluid" src="assets/images/all-course.gif" alt="">
+            <a href="/03_Products_Listing.html" class="product-features-text">All <span class="d-block"></span> Courses</a>
+          </div>
+          <div class="product-features-item">
+            <img class="product-features-image img-fluid" src="assets/images/fluttarIcon.gif" alt="" >
+            <a href="https://hadikachmar3.github.io/#/" target="_blank" class="product-features-text">Hadi <span class="d-block"></span> Kachmar</a>
+          </div>
+        
+          <div class="product-features-item">
+            <img class="product-features-image img-fluid" src="assets/images/Fluttargif.gif" alt="">
+            <a href="/02_Aboutus.html" class="product-features-text">About us</a>
+          </div>
+          <div class="product-features-item">
+            <img class="product-features-image img-fluid" src="assets/images/Feedback.gif" alt="" >
+            <a href="/07_contact_us.html" class="product-features-text">Contact Us </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="featured-products" class="section-featured-products">
+      <div class="container custom-container">
+        <h3 class="h3 heading text-center">FEATURED PRODUCTS</h3>
+        <div class="slider-wrapper">
+          <div class="featured-products-slider" >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide featured-products-slider-item">
+                <a href="/04_products_details.html" class="featured-product-link">
+                  <span class="d-flex justify-content-center align-items-center featured-product-badge sale new">NEW</span>
+                  <div class="img-wrapper">
+                    <div class="featured-product-holder">
+                      <img class="img-fluid" src="assets/images/featured-product-1.jpg" alt="" style="border-radius: 8%;">
+                    </div>
+                  </div>
+                  <p class="featured-product-name">Flutter 3.0&Firebase Build a Grocery App&WEB Admin Panel</p>
+                  <p class="featured-product-price"><span class="old-price">41 $</span>26 $</p>
+                </a>
+              </div>
+              <div class="swiper-slide featured-products-slider-item">
+                <a href="04_products_details.html" class="featured-product-link">
+                  <span class="d-flex justify-content-center align-items-center featured-product-badge sale new">NEW</span>
+
+                  <div class="img-wrapper">
+                    <div class="featured-product-holder">
+                      <img class="img-fluid" src="assets/images/featured-product-2.jpg" alt="">
+                    </div>
+                  </div>
+                  <p class="featured-product-name">Build ChatGPT App in Flutter using OpenAI API                  </p>
+                  <p class="featured-product-price">32 $</p>
+                </a>
+              </div>
+              <div class="swiper-slide featured-products-slider-item">
+                <a href="04_products_details.html" class="featured-product-link">
+                  <div class="img-wrapper">
+                    <div class="featured-product-holder">
+                      <img class="img-fluid" src="assets/images/featured-product-3.jpg" alt="">
+                    </div>
+                  </div>
+                  <p class="featured-product-name">Flutter 2.2 & Firebase, build a complete app from scratch</p>
+                  <p class="featured-product-price">41 $</p>
+                </a>
+              </div>
+              <div class="swiper-slide featured-products-slider-item">
+                <a href="04_products_details.html" class="featured-product-link">
+                  <div class="img-wrapper">
+                    <div class="featured-product-holder">
+                      <img class="img-fluid" src="assets/images/featured-product-4.jpg" alt="">
+                    </div>
+                  </div>
+                  <p class="featured-product-name">Flutter 3.0 & Rest API from scratch, build a mini Store app</p>
+                  <p class="featured-product-price">26 $</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center"><a href="/03_Products_Listing.html" class="more-products">More Products</a></p>
+        <div class="featured-offers">
+  
+          <div class="featured-offers-item special-offers">
+            <div class="offer-details-wrapper">
+              <h3 class="h3 white-text">SPECIAL OFFER</h3>
+              <p class="regular-text white-text">Mixing natural oils and <br> shampoo helps to stop hair</p>
+              <button class="_btn btn-light-blue btn-small" type="button" name="button" value="Shop Now">Shop Now</button>
+            </div>
+            <div class="discount-offer-wrapper">
+              <span class="discount-offer">-20%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-information">
+      <div class="container custom-container">
+        <div class="information-wrapper">
+          <div class="custom-col left" onclick="window.location.href='https://www.udemy.com/user/hadi-kachmar-2/'">
+            <div class="content-wrapper" style="visibility: hidden;">
+              <p class="category-text">BEAUTY</p>
+              <h4 class="h4">LOOK TIPS</h4>
+              <p class="sub-title">FOR HEALTHIER HABITS</p>
+              <button class="_btn btn-large btn-transparent">VIEW ARTICLES</button>
+            </div>
+          </div>
+          <div class="custom-col right"  onclick="window.location.href='https://www.youtube.com/channel/UCacKeYU4BY5wTc0sK1M3-Nw'">
+            <div class="content-wrapper" style="visibility: hidden;">
+              <p class="category-text">BEAUTY</p>
+              <h4 class="h4">LOOK TIPS</h4>
+              <p class="sub-title">FOR HEALTHIER HABITS</p>
+              <button class="_btn btn-large btn-transparent">VIEW ARTICLES</button>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section-socials d-none d-md-block">
+      <div class="container custom-container">
+        <div class="socials-wrapper">
+          <div class="socials-icon-wrapper">
+            <i class="fa fa-facebook-f socials-icon"></i>
+          </div>
+          <div class="socials-icon-wrapper">
+            <i class="fa fa-twitter socials-icon"></i>
+          </div>
+          <div class="socials-icon-wrapper">
+            <i class="fa fa-instagram socials-icon"></i>
+          </div>
+          <div class="socials-icon-wrapper">
+            <i class="fa fa-share-alt socials-icon"></i>
+          </div>
+          <div class="socials-icon-wrapper whatsapp-wrapper">
+            <i class="fa fa-whatsapp socials-icon"></i>
+            <div class="whatsapp-number-wrapper">
+              <p class="whatsapp-number">+961 1 946 568 - +961 1 946 568</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <!-- <div class="overlay-on-open"></div> -->
+    <div class="container-fluid">
+      <div class="custom-row">
+        <div class="custom-col-lg">
+          <div class="footer-links-wrapper">
+            <ul class="footer-list dark list-unstyled">
+              <li class="footer-item">
+                <a href="/03_Products_Listing.html" class="footer-link">All Courses</a>
+              </li>
+              <li class="footer-item">
+                <a href="/03_Products_Listing.html" class="footer-link">Flutter</a>
+              </li>
+              <li class="footer-item">
+                <a href="/03_Products_Listing.html" class="footer-link">Java</a>
+              </li>
+            </ul>
+            <ul class="footer-list dark list-unstyled">
+              <li class="footer-item">
+                <a href="/02_Aboutus.html" class="footer-link">About us</a>
+              </li>
+              <li class="footer-item">
+                <a href="/07_contact_us.html" class="footer-link">Contact us</a>
+              </li>
+            </ul>
+        
+            <ul class="footer-list light list-unstyled">
+              <li class="footer-item">
+                <a href="#" class="footer-link">Privacy Policy</a>
+              </li>
+              <li class="footer-item">
+                <a href="04_home_newsletter.html" class="footer-link">Terms</a>
+              </li>
+              <li class="footer-item">
+                <a href="https://hadikachmar3.github.io/#/" target="_blank" class="footer-link">Hadi Kachmar</a>
+              </li>
+            </ul>
+          </div>
+
+          <p class="footer-copyright">&#169; Copyright 2023. All Rights Reserved. <a href="#">DBee</a></p>
+        </div>
+        <div class="custom-col-sm">
+          <div class="need-help-wrapper text-center">
+            <img class="need-help-icon" src="assets/images/icon-talk.png" alt="">
+            <h2 class="need-help-txt">NEED HELP ?</h2>
+            <div class="btn-wrapper">
+              <div class="btn-holder">
+                <button class="_btn btn-transparent btn-footer">Live Chat</button>
+                <button class="_btn btn-transparent btn-footer">Message Us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-socials d-block d-md-none">
+          <div class="section-socials d-block d-md-none">
+            <div class="container custom-container">
+              <div class="socials-wrapper">
+                <div class="socials-icon-wrapper">
+                  <i class="fa fa-facebook socials-icon"></i>
+                </div>
+                <div class="socials-icon-wrapper">
+                  <i class="fab fa-twitter socials-icon"></i>
+                </div>
+                <div class="socials-icon-wrapper">
+                  <i class="fab fa-instagram socials-icon"></i>
+                </div>
+                <div class="socials-icon-wrapper">
+                  <i class="fas fa-share-alt socials-icon"></i>
+                </div>
+                <div class="socials-icon-wrapper whatsapp-wrapper">
+                  <i class="fab fa-whatsapp socials-icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class="whatsapp-number-mobile">
+              <p>+961 1 946 568 - +961 1 946 568</p>
+            </div>
+          </div>
+          <p class="footer-copyright">&#169; Copyright 2016. All Rights Reserved. <a href="#">Dbee</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascripts/vendors/jquery.min.js"></script>
+  <script src="javascripts/vendors/tether.min.js"></script>
+  <script src="javascripts/vendors/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-scroll-lock@3/jquery-scrollLock.min.js"></script>
+  <script src="javascripts/core/base.js"></script>
+  <script src="javascripts/modules/theme-module.js"></script>
+  <script src="javascripts/bootstrapper.js"></script>
+
+  </script>
+
+  <!--[if lte IE 9]>
+        <script src="javascripts/non-responsive.js"></script>
+    <![endif]-->
+</body>
+
+</html>
